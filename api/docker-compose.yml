@@ -1,0 +1,37 @@
+version: "3.2"
+
+services:
+  web:
+    container_name: harvest_app_api
+    build: .
+    command: npm run dev
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/app
+    ports:
+      - 3300:3300
+    depends_on:
+      - postgres
+  postgres:
+    container_name: harvest_app_postgres
+    image: postgres:9.6.2-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: harvest_app_user
+      POSTGRES_PASSWORD: harvest_app_pass
+      POSTGRES_DB: harvest_app
+  pgadmin:
+    container_name: harvest_app_pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 9999:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: daniel@ddluc.com
+      PGADMIN_DEFAULT_PASSWORD: pgadmin_pass
+    logging:
+      driver: none
+volumes:
+  postgres-data:

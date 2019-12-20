@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS month (
   id INTEGER NOT NULL,
   label VARCHAR(32),
-  abbreviation CHAR(3),
+  key CHAR(3) UNIQUE,
   season INTEGER [],
   PRIMARY KEY (id)
 );
 
-INSERT INTO month (id, label, abbreviation, season)
+INSERT INTO month (id, label, key, season)
 VALUES
   (1, 'January', 'JAN', ARRAY[4]),
   (2, 'February', 'FEB', ARRAY[4]),

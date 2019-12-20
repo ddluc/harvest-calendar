@@ -13,6 +13,8 @@ services:
       - 3300:3300
     depends_on:
       - postgres
+    env_file:
+      - .env
   postgres:
     container_name: harvest_app_postgres
     image: postgres:9.6.2-alpine
@@ -28,10 +30,10 @@ services:
     restart: always
     ports:
       - 9999:80
+    logging:
+      driver: none
     environment:
       PGADMIN_DEFAULT_EMAIL: daniel@ddluc.com
       PGADMIN_DEFAULT_PASSWORD: pgadmin_pass
-    logging:
-      driver: none
 volumes:
   postgres-data:

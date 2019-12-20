@@ -6,14 +6,18 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon --watch src src/app.js",
+    "data-import": "node src/importer/import.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Lucas",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.20.4",
+    "pg": "^7.15.1"
   },
   "devDependencies": {
+    "csvtojson": "^2.0.10",
     "nodemon": "^2.0.2"
   }
 }

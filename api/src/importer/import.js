@@ -11,19 +11,53 @@ const knex = require('knex')({
   }
 });
 
+class DataImporter {
 
+  static async exec () {
+    try {
+      const files = await DataImporter.readDataDirectory();
+      const fileData = await DataImporter.loadData(files);
+      await DataImporter.importData(fileData);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      return process.exit()
+    }
+  }
 
-const importData = () => {
+  static readDataDirectory() {
+    return new Promise((resolve, reject) => {
+      const dataDirPath = path.join(__dirname, 'data');
+      fs.readdir(dataDirPath, async (err, files) => {
+        if (err) {
+          return console.log(`Unable to scan directory ${dataDirPath}: ${err}`);
+          reject(err);
+        }
+        resolve(files);
+      });
+    });
+  };
 
-  const dataDirPath = path.join(__dirname, 'data');
+  static async importData (fileData) {
+    let marketPositionData = [];
+    fileData.forEach((data) => {
+      marketPositionData = marketPositionData.concat(data);
+    });
+    let result = null;
+    result = await knex('market_position').del();
+    console.log(`DELETED ${result} rows in TABLE (market_position)`);
+    result = await knex('market_position')
+        .returning(['id', 'vegetable', 'month', 'segment', 'status', 'value'])
+        .insert(marketPositionData);
+    console.log(`INSERTED ${result.length} rows in TABLE (market_position)`);
+  };
 
-  // Read Data from disk
-  fs.readdir(dataDirPath, (err, files) => {
-    if (err) return console.log(`Unable to scan directory ${dataDirPath}: ${err}`);
+  static async loadData (files) {
+    const dataDirPath = path.join(__dirname, 'data');
     const promises = []
     files.forEach((file) => {
-      csvFilePath = path.join(dataDirPath, file)
-      csvPromise = csv({
+      let csvFilePath = path.join(dataDirPath, file)
+      let csvPromise = csv({
         colParser: {
           "vegetable": "string",
           "month": "string",
@@ -35,33 +69,11 @@ const importData = () => {
       }).fromFile(csvFilePath);
       promises.push(csvPromise);
     });
+    const fileData = await Promise.all(promises);
+    return fileData;
+  }
 
-    // INSERT Data into database
-    Promise.all(promises)
-      .then((fileData) => {
-        let marketPositionData = [];
-        fileData.forEach((data) => {
-          marketPositionData = marketPositionData.concat(data);
-        });
-        knex('market_position')
-          .del().then((result) => {
-            console.log(`DELETED ${result} rows in TABLE (market_position)`);
-            knex('market_position')
-              .returning(['id', 'vegetable', 'month', 'segment', 'status', 'value'])
-              .insert(marketPositionData)
-              .then((result) => {
-                console.log(`INSERTED ${result.length} rows in TABLE (market_position)`);
-              })
-              .catch((error) => {
-                console.error(error);
-              });
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-    });
-  });
 
-};
+}
 
-importData();
+DataImporter.exec();

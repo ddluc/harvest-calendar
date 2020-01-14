@@ -1,0 +1,38 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.app {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-gap: 4px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr 50px;
+  background-color: #ededed;
+}
+
+.app .sidebar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: red;
+}
+
+.app .calendar {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: green;
+}
+
+.app .footer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: blue;
+}

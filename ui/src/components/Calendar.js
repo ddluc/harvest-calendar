@@ -1,10 +1,14 @@
 import React from 'react';
 import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
+import { Store } from '../store/Store';
 
 import '../styles/Calendar.scss'
 
 function Calendar() {
+
+  const { state, dispatch } = React.useContext(Store);
+
   return (
     <div className="calendar">
       <CalendarHeader />

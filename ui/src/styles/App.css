@@ -1,3 +1,14 @@
+/**
+ *COLOR THEME
+  white: #FBF5FF
+  grey-1: #BDB9C0
+  grey-2: #E2DCE6
+  grey-3: #7D7A80
+  black: #3F3D40
+**/
+
+
+
 body {
   margin: 0px;
   padding: 0px;
@@ -7,32 +18,22 @@ body {
   display: grid;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   grid-gap: 4px;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: 1fr 50px;
-  background-color: #ededed;
+  grid-template-columns: 280px 1fr;
+  background-color: #FFF;
 }
 
 .app .sidebar {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-color: red;
+  height: 100%;
+  background-color: #E2DCE6;
 }
 
-.app .calendar {
+.app .main {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-color: green;
-}
-
-.app .footer {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  background-color: blue;
+  height: 100%;
+  background-color: #FBF5FF;
 }

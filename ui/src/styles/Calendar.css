@@ -1,0 +1,12 @@
+.calendar {
+  width: 95%;
+  height: 90%;
+  margin: 2% auto 2% auto;
+  overflow: hidden;
+  background-color: #ededed;
+}
+
+.calendar-body {
+  height: 100%;
+  overflow: scroll;
+}

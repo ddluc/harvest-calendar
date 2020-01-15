@@ -1,16 +1,16 @@
 import React from 'react';
-import '../styles/App.css'
-
 import Calendar from './Calendar.js';
 import Sidebar from './Sidebar.js';
-import Footer from './Footer.js';
+
+import '../styles/App.css'
 
 function App() {
   return (
     <div className="app">
       <Sidebar />
-      <Calendar />
-      <Footer />
+      <div className="main">
+        <Calendar />
+      </div>
     </div>
   );
 }

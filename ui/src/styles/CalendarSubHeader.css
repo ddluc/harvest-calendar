@@ -1,0 +1,10 @@
+.sub-header-cell {
+  background-color: red;
+}
+
+.sub-header-cell.cell-1 {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}

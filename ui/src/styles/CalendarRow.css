@@ -1,8 +1,8 @@
 .calendar-row {
   display: grid;
   grid-gap: 1px;
-  height: 50px; 
-  grid-template-columns: repeat(18, 1fr);
+  height: 50px;
+  grid-template-columns: 33% repeat(12, 1fr);
 }
 
 .calendar-cell {
@@ -11,6 +11,4 @@
 
 .calendar-cell.cell-1 {
   text-align: left;
-  grid-column-start: 1;
-  grid-column-end: 7;
 }

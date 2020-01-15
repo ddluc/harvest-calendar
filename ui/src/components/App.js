@@ -2,7 +2,7 @@ import React from 'react';
 import Calendar from './Calendar.js';
 import Sidebar from './Sidebar.js';
 
-import '../styles/App.css'
+import '../styles/App.scss'
 
 function App() {
   return (

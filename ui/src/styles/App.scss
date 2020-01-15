@@ -1,0 +1,46 @@
+
+@import './__theme.scss';
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.app {
+  display: grid;
+  overflow: hidden;
+  grid-gap: 4px;
+  height: 100vh;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: 50px 1fr;
+  background-color: $white;
+}
+
+.app .sidebar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: $grey-2;
+  @media( max-width: $tablet-view) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+
+.app .main {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  align-self: stretch;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  @media( max-width: $tablet-view) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  background-color: $grey-1;
+}

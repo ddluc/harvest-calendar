@@ -2,7 +2,7 @@ import React from 'react';
 import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
 
-import '../styles/Calendar.css'
+import '../styles/Calendar.scss'
 
 function Calendar() {
   return (

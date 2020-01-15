@@ -1,12 +1,16 @@
+@import '__theme.scss';
+
 .calendar {
   width: 95%;
-  height: 90%;
   margin: 2% auto 2% auto;
   overflow: hidden;
   background-color: #ededed;
 }
 
 .calendar-body {
-  height: 100%;
+  max-height: 80vh;
   overflow: scroll;
+  @media (max-width: $tablet-view) {
+    max-height: 60vh;
+  }
 }

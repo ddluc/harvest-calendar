@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
 import { Store } from '../store/Store';
+import MarketAPIClient from '../services/MarketAPIClient';
 
 import '../styles/Calendar.scss'
 
 function Calendar() {
 
   const { state, dispatch } = React.useContext(Store);
+
+  useEffect(() => {
+    const marketData = MarketAPIClient.getMarketData();
+    
+  }, [-1]);
 
   return (
     <div className="calendar">

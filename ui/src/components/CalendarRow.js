@@ -3,7 +3,6 @@ import React from 'react';
 import '../styles/CalendarRow.css'
 
 function CalendarRow({name}) {
-  console.log(name)
   return (
     <div className="calendar-row">
       <div className="calendar-cell cell-1">{name}</div>

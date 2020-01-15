@@ -11,7 +11,7 @@ const knex = require('knex')({
 
 class Api {
 
-  static async loadAppConfig (req, res) {
+  static async getMarketData (req, res) {
     try {
       const months = await knex('month').select();
       const seasons = await knex('season').select();
@@ -22,18 +22,18 @@ class Api {
           .select('id', 'month', 'segment', 'value', 'unit', 'status');
         vegetable.mPos = mPos;
       }
-      const config = {
+      const marketData = {
         vegetables,
         months,
         seasons
       };
-      res.status(200).send(config);
+      res.status(200).send(marketData);
     } catch (err) {
       console.error(err);
       res.status(500).send(err);
     }
   }
-  
+
 }
 
 module.exports = Api;

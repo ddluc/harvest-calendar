@@ -12,6 +12,7 @@
   "author": "Daniel Lucas",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.20.4",
     "pg": "^7.15.1"

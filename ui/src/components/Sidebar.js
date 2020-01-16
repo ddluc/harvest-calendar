@@ -3,7 +3,7 @@ import { Store } from '../store/Store';
 
 function Sidebar() {
 
-  const { state, dispatch } = React.useContext(Store);
+  const { state } = React.useContext(Store);
 
   return (
     <div className="sidebar">

@@ -10,17 +10,15 @@ function Calendar() {
 
   const { state, dispatch } = React.useContext(Store);
 
-  const loadMarketData = async () => {
-    const marketData =  await MarketAPIClient.getMarketData();
-    dispatch({
-      type: 'FETCH_MARKET_DATA',
-      payload: marketData
-    });
-  };
-
   useEffect(() => {
-    loadMarketData();
-  }, [-1]);
+    (async () => {
+      const marketData =  await MarketAPIClient.getMarketData();
+      dispatch({
+        type: 'FETCH_MARKET_DATA',
+        payload: marketData
+      });
+    })();
+  }, [dispatch]);
 
   if (state.marketData !== null) {
     return (

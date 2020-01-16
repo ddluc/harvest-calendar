@@ -1,5 +1,4 @@
 import React from 'react';
-import {cloneDeep} from  'lodash';
 
 const initialState = {
   marketData: null,
@@ -12,13 +11,11 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  const newState = cloneDeep(state);
   switch (action.type) {
   case 'FETCH_MARKET_DATA':
-    newState.marketData = action.payload
-    return newState;
+    return {...state, marketData: action.payload }
   default:
-    return newState;
+    return {...state};
   }
 };
 

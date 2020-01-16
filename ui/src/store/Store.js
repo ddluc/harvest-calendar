@@ -1,6 +1,8 @@
 import React from 'react';
+import {cloneDeep} from  'lodash';
 
 const initialState = {
+  marketData: null,
   appTitle: 'Harvest Calendar',
   searchInput: '',
   view: 'season',
@@ -10,13 +12,13 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  const newState = {...state};
+  const newState = cloneDeep(state);
   switch (action.type) {
-  case 'UPDATE_TITLE':
-    newState.title = action.payload
-    return state;
+  case 'FETCH_MARKET_DATA':
+    newState.marketData = action.payload
+    return newState;
   default:
-    return state;
+    return newState;
   }
 };
 

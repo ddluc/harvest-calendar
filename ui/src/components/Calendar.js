@@ -10,31 +10,35 @@ function Calendar() {
 
   const { state, dispatch } = React.useContext(Store);
 
+  const loadMarketData = async () => {
+    const marketData =  await MarketAPIClient.getMarketData();
+    dispatch({
+      type: 'FETCH_MARKET_DATA',
+      payload: marketData
+    });
+  };
+
   useEffect(() => {
-    const marketData = MarketAPIClient.getMarketData();
-    
+    loadMarketData();
   }, [-1]);
 
-  return (
-    <div className="calendar">
-      <CalendarHeader />
-      <div className="calendar-body">
-        <CalendarRow name="Garlic" />
-        <CalendarRow name="Onion" />
-        <CalendarRow name="Carrot" />
-        <CalendarRow name="Cabbage" />
-        <CalendarRow name="Swiss Chard" />
-        <CalendarRow name="Kale" />
-        <CalendarRow name="Chanterelle" />
-        <CalendarRow name="Spinach" />
-        <CalendarRow name="Turnip"/>
-        <CalendarRow name="Winter Squash"/>
-        <CalendarRow name="Tomato"/>
-        <CalendarRow name="Red Pepper"/>
-        <CalendarRow name="Nettles" />
+  if (state.marketData !== null) {
+    return (
+      <div className="calendar">
+        <CalendarHeader />
+        <div className="calendar-body">
+          {
+            state.marketData.vegetables.map((vegetable) => {
+              return <CalendarRow key={vegetable.id} vegetable={vegetable} />
+            })
+          }
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return '...loading';
+  }
+
 }
 
 export default Calendar;

@@ -10,7 +10,7 @@ class MarketAPIClient {
     const url = `${this.baseUrl}/api/market_data`;
     try {
       const response = await axios.get(url);
-      console.log(response.data);
+      return response.data; 
     } catch (err) {
       console.error(err);
       return null;

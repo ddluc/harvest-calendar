@@ -2,10 +2,10 @@ import React from 'react';
 
 import '../styles/CalendarRow.css'
 
-function CalendarRow({name}) {
+function CalendarRow({vegetable}) {
   return (
     <div className="calendar-row">
-      <div className="calendar-cell cell-1">{name}</div>
+      <div className="calendar-cell cell-1">{vegetable.label}</div>
       <div className="calendar-cell cell-2">X</div>
       <div className="calendar-cell cell-3">X</div>
       <div className="calendar-cell cell-4">X</div>

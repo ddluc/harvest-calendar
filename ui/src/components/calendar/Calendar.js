@@ -3,7 +3,7 @@ import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
 import { Store } from '../../flux/store';
 import { fetchMarketData } from '../../flux/actions';
-import { getMonthsInSeason, sortVegetables } from '../../services/selectors';
+import { getMonthsInSeason, sortVegetables, filterVegetables } from '../../services/selectors';
 import { buildCellMap } from '../../services/selectors';
 
 import '../../styles/Calendar.scss'
@@ -13,7 +13,8 @@ function Calendar() {
   const { state, dispatch } = React.useContext(Store);
   React.useEffect(() => { fetchMarketData(dispatch) }, []);
   if (state.marketData !== null) {
-    const sortedVegetablesInSeason = sortVegetables(state);
+    let vegetables = sortVegetables(state);
+    vegetables = filterVegetables(state, vegetables);
     const monthsInSeason = getMonthsInSeason(state);
     const cellMap = buildCellMap(state);
     return (
@@ -24,7 +25,7 @@ function Calendar() {
           view={state.view} />
         <div className="calendar-body">
           {
-            sortedVegetablesInSeason.map((vegetable) => {
+            vegetables.map((vegetable) => {
               return <CalendarRow key={vegetable.id} vegetable={vegetable} cellMap={cellMap}/>
             })
           }

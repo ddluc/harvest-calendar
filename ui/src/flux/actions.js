@@ -18,3 +18,10 @@ export const setActiveSeason = (dispatch, season) => {
     payload: season
   });
 }
+
+export const applySearchFilter = (dispatch, userInput) => {
+  dispatch({
+    type: 'APPLY_SEARCH_FILTER',
+    payload: userInput
+  });
+}

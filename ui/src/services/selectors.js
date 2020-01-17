@@ -55,21 +55,52 @@ export const sortVegetables = (state) => {
   let late = [];
   let off = [];
   let none = [];
-  marketData.vegetables.forEach((vegetable) => {
-    vegetable.mPos.forEach((mPos) => {
-      if (`${mPos.month}-${mPos.segment}` === `${activeMonth}-${activeSegment}` ) {
-        if ( mPos.status === 'peak') peak.push(vegetable);
-        if ( mPos.status === 'early') early.push(vegetable);
-        if ( mPos.status === 'late') late.push(vegetable);
-        if ( mPos.status === 'off') off.push(vegetable);
-        if ( mPos.status === 'none') none.push(vegetable);
-      }
+  if (activeSegment) {
+    marketData.vegetables.forEach((vegetable) => {
+      vegetable.mPos.forEach((mPos) => {
+        if (`${mPos.month}-${mPos.segment}` === `${activeMonth}-${activeSegment}` ) {
+          if ( mPos.status === 'peak') peak.push(vegetable);
+          if ( mPos.status === 'early') early.push(vegetable);
+          if ( mPos.status === 'late') late.push(vegetable);
+          if ( mPos.status === 'off') off.push(vegetable);
+          if ( mPos.status === 'none') none.push(vegetable);
+        }
+      });
     });
-  });
-  let sortedVegetables = [...peak, ...early, ...late, ...off, ...none ];
-  return sortedVegetables;
+    let sortedVegetables = [...peak, ...early, ...late, ...off, ...none ];
+    return sortedVegetables;
+  } else {
+    return marketData.vegetables;
+  }
 };
 
+/**
+ * filterVegetables
+ * @description filters the vegetables to the user's search query
+ * @param <Object> state - application state
+ */
+export const filterVegetables = (state, vegetables) => {
+  let { searchInput } = state;
+  console.log(searchInput);
+  console.log(vegetables);
+  if (searchInput !== '' && searchInput.length > 2) {
+    let filteredVegetables = [];
+    vegetables.forEach((veg) => {
+      if (veg.label.includes(searchInput)) {
+        filteredVegetables.push(veg);
+      }
+    });
+    return filteredVegetables;
+  } else {
+    return vegetables;
+  }
+}
+
+/**
+ * buildCellMap
+ * @description maps the market data to the css grid
+ * @param <Object> state - application state
+ */
 export const buildCellMap = (state) => {
   const segments = buildSegmentMap();
   const months = getMonthsInSeason(state);

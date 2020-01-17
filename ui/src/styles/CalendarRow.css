@@ -9,6 +9,55 @@
   text-align: center;
 }
 
-.calendar-cell.cell-1 {
+.calendar-cell.cell-label {
+  order: -1;
   text-align: left;
+}
+
+.calendar-cell.cell-1 {
+  order: 1;
+}
+
+.calendar-cell.cell-2 {
+  order: 2;
+}
+
+.calendar-cell.cell-3 {
+  order: 3;
+}
+
+.calendar-cell.cell-4 {
+  order: 4;
+}
+
+.calendar-cell.cell-5 {
+  order: 5;
+}
+
+.calendar-cell.cell-6 {
+  order: 6;
+}
+
+.calendar-cell.cell-7 {
+  order: 7;
+}
+
+.calendar-cell.cell-8 {
+  order: 8;
+}
+
+.calendar-cell.cell-9 {
+  order: 9;
+}
+
+.calendar-cell.cell-10 {
+  order: 10;
+}
+
+.calendar-cell.cell-11 {
+  order: 11;
+}
+
+.calendar-cell.cell-12 {
+  order: 11;
 }

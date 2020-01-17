@@ -5,7 +5,7 @@ const initialState = {
   appTitle: 'Harvest Calendar',
   searchInput: '',
   view: 'season',
-  activeSeason: 1,
+  activeSeason: 3,
   activeMonth: null,
   pricingMode: '',
 };

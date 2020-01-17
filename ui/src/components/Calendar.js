@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
 import { Store } from '../store/Store';
-import { getVegetablesInSeason } from '../services/UtilityService';
+import { getVegetablesInSeason, getMonthsInSeason, buildCellMap } from '../services/UtilityService';
 import MarketAPIClient from '../services/MarketAPIClient';
 
 import '../styles/Calendar.scss'
@@ -21,22 +21,25 @@ function Calendar() {
     })();
   }, [dispatch]);
 
+  console.log(state.marketData);
+
   if (state.marketData !== null) {
     const vegetablesInSeason = getVegetablesInSeason(state.marketData.vegetables, state.marketData.months, state.activeSeason);
+    const monthsInSeason = getMonthsInSeason(state.marketData.months, state.activeSeason);
+    const cellMap = buildCellMap(state.marketData.months, state.activeSeason);
     return (
       <div className="calendar">
         <CalendarHeader
-          marketData={state.marketData}
-          view={state.view}
-          activeSeason={state.activeSeason}
-          activeMonth={state.activeMonth} />
-
+          months={monthsInSeason}
+          cellMap={cellMap}
+          view={state.view} />
         <div className="calendar-body">
           {
             vegetablesInSeason.map((vegetable) => {
               return <CalendarRow
                         key={vegetable.id}
                         vegetable={vegetable}
+                        cellMap={cellMap}
                         marketData={state.marketData}
                         view={state.view}
                         activeSeason={state.activeSeason}

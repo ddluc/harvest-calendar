@@ -1,22 +1,26 @@
 import React from 'react';
-import { getMonthsInSeason } from '../services/UtilityService';
+import { getMonthsInSeason, buildSegmentMap } from '../services/UtilityService';
 
 import '../styles/CalendarHeader.css'
 
-function CalendarHeader({view, activeSeason, activeMonth, marketData}) {
+function CalendarHeader({view, cellMap, months}) {
 
   if (view === 'season') {
-    const months = getMonthsInSeason(marketData.months, activeSeason);
+
+    const renderHeader = () => {
+      const segmentMap = buildSegmentMap();
+      return months.map((month, index) => {
+        let cellIndex = cellMap.header[month.key];
+        let id = `header-month-${month.key}`;
+        return (<div key={month.id} id={id} className={`header-cell cell-${cellIndex}`}>{month.label}</div>);
+      })
+    };
+
     return (
       <div className="calendar-header">
 
-        <div className="header-cell cell-1">Vegetable</div>
-        {
-          months.map((month, index) => {
-            let cellIndex = index + 2;
-            return (<div key={month.id} className={`header-cell cell-${cellIndex}`}>{month.label}</div>);
-          })
-        }
+        <div className="header-cell label-cell">Vegetable</div>
+        { renderHeader() }
         <div className="sub-header-cell cell-1"></div>
         <div className="sub-header-cell cell-2">early</div>
         <div className="sub-header-cell cell-3">mid</div>

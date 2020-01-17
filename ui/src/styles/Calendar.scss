@@ -14,3 +14,9 @@
     max-height: 60vh;
   }
 }
+
+.active {
+  font-weight: bold;
+  background-color: $charcol;
+  color: $grey-1;
+}

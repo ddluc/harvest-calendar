@@ -1,7 +1,7 @@
 import React from 'react';
-import { getMonthsInSeason, buildSegmentMap } from '../services/UtilityService';
+import { getMonthsInSeason, buildSegmentMap } from '../../services/UtilityService';
 
-import '../styles/CalendarHeader.css'
+import '../../styles/CalendarHeader.css'
 
 function CalendarHeader({view, cellMap, months}) {
 

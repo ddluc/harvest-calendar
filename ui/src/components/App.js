@@ -1,8 +1,8 @@
 import React from 'react';
-import Calendar from './Calendar.js';
-import Sidebar from './Sidebar.js';
+import Calendar from './calendar/Calendar';
+import Sidebar from './Sidebar';
 
-import { StoreProvider } from '../store/Store.js';
+import { StoreProvider } from '../store/Store';
 
 import '../styles/App.scss'
 

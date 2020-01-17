@@ -1,5 +1,5 @@
 import React from 'react';
-import { getMonthsInSeason, buildSegmentMap } from '../../services/UtilityService';
+import { getMonthsInSeason, buildSegmentMap } from '../../services/selectors';
 
 import '../../styles/CalendarHeader.css'
 

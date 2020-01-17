@@ -1,7 +1,7 @@
 import React from 'react';
 import Cell from './Cell';
 import { Store } from '../../flux/store';
-import { getMonthsInSeason } from '../../services/UtilityService';
+import { getMonthsInSeason } from '../../services/selectors';
 
 import '../../styles/CalendarRow.css'
 

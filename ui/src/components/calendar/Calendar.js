@@ -3,7 +3,7 @@ import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
 import { Store } from '../../flux/store';
 import { fetchMarketData } from '../../flux/actions';
-import { getVegetablesInSeason, getMonthsInSeason, buildCellMap, sortVegetables } from '../../services/UtilityService';
+import { getVegetablesInSeason, getMonthsInSeason, buildCellMap, sortVegetables } from '../../services/selectors';
 
 import '../../styles/Calendar.scss'
 

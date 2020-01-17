@@ -54,25 +54,29 @@ export const getVegetablesInSeason = (vegetables, months, season) => {
  * @param <Array> months — array of months
  * @param <Number> season — the id of the active season (1,2,3,4)
  */
-export const sortVegetables = (vegetables, months, season) => {
-  let vegetablesInSeason = [];
-  const monthsInSeason = getMonthsInSeason(months, season);
-  const monthKeys = monthsInSeason.map((month) => month.key);
-  vegetables.forEach((vegetable) => {
-    let inSeason = false;
+export const sortVegetables = (state) => {
+  let {marketData,  activeMonth, activeSegment} = state;
+  let peak = [];
+  let early = [];
+  let late = [];
+  let off = [];
+  let none = [];
+  marketData.vegetables.forEach((vegetable) => {
     vegetable.mPos.forEach((mPos) => {
-      if (monthKeys.includes(mPos.month)){
-        if (mPos.status !== 'none') {
-          inSeason = true;
-        }
+      if (`${mPos.month}-${mPos.segment}` === `${activeMonth}-${activeSegment}` ) {
+        if ( mPos.status === 'peak') peak.push(vegetable);
+        if ( mPos.status === 'early') early.push(vegetable);
+        if ( mPos.status === 'late') late.push(vegetable);
+        if ( mPos.status === 'off') off.push(vegetable);
+        if ( mPos.status === 'none') none.push(vegetable);
       }
     });
-    if (inSeason) {
-      vegetablesInSeason.push({ ...vegetable})
-    }
   });
-  vegetablesInSeason.sort((a, b) => b.mPosCount - a.mPosCount);
-  return vegetablesInSeason;
+
+  let sortedVegetables = [...peak, ...early, ...late, ...off, ...none ];
+
+  console.log(sortedVegetables);
+  return sortedVegetables;
 };
 
 /**

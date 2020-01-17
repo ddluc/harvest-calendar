@@ -1,6 +1,6 @@
 import React from 'react';
 import Calendar from './calendar/Calendar';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar/Sidebar';
 
 import { StoreProvider } from '../store/Store';
 

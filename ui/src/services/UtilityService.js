@@ -1,6 +1,6 @@
 /**
  * Utility Methods
- * (i.e) Selectors
+ * TODO: rename UtilityService.js to selectors 
  **/
 
 /**

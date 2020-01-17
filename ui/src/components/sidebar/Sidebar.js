@@ -2,6 +2,7 @@ import React from 'react';
 import { Store } from '../../flux/store';
 import SearchField from './SearchField';
 import SeasonPicker from './SeasonPicker';
+import PricingToggle from './PricingToggle';
 
 import '../../styles/Sidebar.scss'
 
@@ -15,6 +16,7 @@ function Sidebar() {
         <span>For Willamette Valley Farmer's Markets</span>
         <SearchField placeholder="Search..."/>
         <SeasonPicker />
+        <PricingToggle />
     </div>
   );
 }

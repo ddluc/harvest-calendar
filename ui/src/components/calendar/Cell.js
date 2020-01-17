@@ -1,18 +1,25 @@
 import React from 'react';
+import { Store } from '../../flux/store';
 
 function Cell ({mPos, cellIndex, id, isActive}) {
 
-  if (mPos.status === 'none' || mPos.status === 'off') {
-    return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive}`}>—</div>);
+  const { state, dispatch } = React.useContext(Store);
+
+  let cellContent = '';
+
+  if (state.pricingMode == 'on') {
+    cellContent = mPos.value > 0 ? mPos.value : '-'; 
+  } else if (mPos.status === 'none' || mPos.status === 'off') {
+    cellContent = '-';
   } else if (mPos.status === 'early') {
-    return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive}`}>E</div>);
+    cellContent = 'E';
   } else if (mPos.status === 'peak') {
-    return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive}`}>P</div>);
+    cellContent = 'P'
   } else if (mPos.status === 'late') {
-    return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive}`}>L</div>);
-  } else {
-    return (<div className={`calendar-cell`}>—</div>);
+    cellContent = 'L'
   }
+
+  return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive} ${mPos.status}`}>{cellContent}</div>);
 
 };
 

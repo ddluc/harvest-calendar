@@ -26,6 +26,13 @@ export const setActiveSegment = (dispatch, month, segment) => {
   })
 }
 
+export const setPricingMode = (dispatch, mode) => {
+  dispatch({
+    type: 'SET_PRICING_MODE',
+    payload: mode
+  })
+}
+
 export const applySearchFilter = (dispatch, userInput) => {
   dispatch({
     type: 'APPLY_SEARCH_FILTER',

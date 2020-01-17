@@ -1,0 +1,24 @@
+@import '__theme.scss';
+
+.pricing-toggle {
+
+  margin: 40px 0px;
+
+  a.toggle {
+      background: $grey-2;
+      cursor: pointer;
+      border: 2px solid black;
+      border-right-width: 30px;
+      padding: 0 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all .5s ease;
+  }
+
+  a.toggle.off {
+      background: $grey-3;
+      border-right-width: 2px;
+      border-left-width: 30px;
+  }
+
+}

@@ -1,12 +1,13 @@
 .calendar-row {
   display: grid;
   grid-gap: 1px;
-  height: 50px;
   grid-template-columns: 33% repeat(12, 1fr);
+  grid-template-rows: 50px;
 }
 
 .calendar-cell {
   text-align: center;
+  padding-top: 15px;
 }
 
 .calendar-cell.cell-label {
@@ -15,49 +16,85 @@
 }
 
 .calendar-cell.cell-1 {
-  order: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .calendar-cell.cell-2 {
-  order: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
 .calendar-cell.cell-3 {
-  order: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 4;
+  grid-column-end: 5;
 }
 
 .calendar-cell.cell-4 {
-  order: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 5;
+  grid-column-end: 6;
 }
 
 .calendar-cell.cell-5 {
-  order: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 6;
+  grid-column-end: 7;
 }
 
 .calendar-cell.cell-6 {
-  order: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 7;
+  grid-column-end: 8;
 }
 
 .calendar-cell.cell-7 {
-  order: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 8;
+  grid-column-end: 9;
 }
 
 .calendar-cell.cell-8 {
-  order: 8;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 9;
+  grid-column-end: 10;
 }
 
 .calendar-cell.cell-9 {
-  order: 9;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 10;
+  grid-column-end: 11;
 }
 
 .calendar-cell.cell-10 {
-  order: 10;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 11;
+  grid-column-end: 12;
 }
 
 .calendar-cell.cell-11 {
-  order: 11;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 12;
+  grid-column-end: 13;
 }
 
 .calendar-cell.cell-12 {
-  order: 11;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 13;
+  grid-column-end: 14;
 }

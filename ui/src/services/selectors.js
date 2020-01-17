@@ -1,6 +1,5 @@
 /**
  * Utility Methods
- * TODO: rename selectors.js to selectors 
  **/
 
 /**
@@ -46,43 +45,4 @@ export const sortVegetables = (state) => {
   });
   let sortedVegetables = [...peak, ...early, ...late, ...off, ...none ];
   return sortedVegetables;
-};
-
-/**
- * buildCellMap
- * @description maps css grid cell indexes to month/segment
- * @param <Object> state - application state
- * @returns <Object> cellMap — a map of cell indexes
- */
-export const buildCellMap = (state) => {
-  let cellMap = {body: {}, header: {}};
-  let bodyCellIndex = 1;
-  let headerCellIndex = 1;
-  let segments = buildSegmentMap();
-  let monthsInSeason = getMonthsInSeason(state);
-  monthsInSeason.forEach((month) => {
-    cellMap.header[month.key] = headerCellIndex;
-    headerCellIndex++;
-    segments.forEach((segment) => {
-      let key = `${month.key}-${segment.id}`;
-      cellMap.body[key] = bodyCellIndex;
-      bodyCellIndex++;
-    });
-   });
-  return cellMap;
-};
-
-
-/**
- * buildSegmentMap
- * @description builds a statuc segment array
- * @returns <Array> segment
- */
-export const buildSegmentMap = () => {
-  const segments = [
-    {id: 1, key: 'early', label: 'Early'},
-    {id: 2, key: 'mid', label: 'Mid', },
-    {id: 3, key: 'late', label: 'Late'}
-  ];
-  return segments;
 };

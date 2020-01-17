@@ -1,6 +1,6 @@
 import React from 'react';
 import Cell from './Cell';
-import { Store } from '../../store/Store';
+import { Store } from '../../flux/store';
 import { getMonthsInSeason } from '../../services/UtilityService';
 
 import '../../styles/CalendarRow.css'

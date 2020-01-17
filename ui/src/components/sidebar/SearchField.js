@@ -1,5 +1,5 @@
 import React from 'react';
-import { Store } from '../../store/Store';
+import { Store } from '../../flux/store';
 
 function SearchField() {
 
@@ -10,4 +10,4 @@ function SearchField() {
   );
 }
 
-export default Sidebar;
+export default SearchField;

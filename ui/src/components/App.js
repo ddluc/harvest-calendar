@@ -2,7 +2,7 @@ import React from 'react';
 import Calendar from './calendar/Calendar';
 import Sidebar from './sidebar/Sidebar';
 
-import { StoreProvider } from '../store/Store';
+import { StoreProvider } from '../flux/store';
 
 import '../styles/App.scss'
 

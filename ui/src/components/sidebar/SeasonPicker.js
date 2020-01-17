@@ -1,5 +1,5 @@
 import React from 'react';
-import { Store } from '../../store/Store';
+import { Store } from '../../flux/store';
 
 function SeasonPicker() {
 

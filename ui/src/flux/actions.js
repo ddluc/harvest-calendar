@@ -10,4 +10,11 @@ export const fetchMarketData = async (dispatch) => {
       type: 'FETCH_MARKET_DATA',
       payload: marketData
     });
+};
+
+export const setActiveSeason = (dispatch, season) => {
+  dispatch({
+    type: 'SET_ACTIVE_SEASON',
+    payload: season
+  });
 }

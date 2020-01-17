@@ -1,12 +1,16 @@
 import React from 'react';
 import { Store } from '../../flux/store';
 
-function SearchField() {
+import '../../styles/SearchField.scss'
+
+function SearchField({placeholder}) {
 
   const { state } = React.useContext(Store);
 
   return (
-    <input type="text />
+    <div className="search-field">
+      <input type="text" placeholder={placeholder} />
+    </div>
   );
 }
 

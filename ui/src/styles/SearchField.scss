@@ -1,0 +1,21 @@
+@import '__theme.scss';
+
+.search-field {
+  margin: 20px 0px;
+  input {
+    font-size: 14px;
+    width: 80%;
+    padding: 6px 6px 6px 2px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px $charcol;
+  }
+  input::placeholder {
+    color: $grey-4;
+  }
+  input:focus {
+    outline-width: 0;
+  }
+}

@@ -16,7 +16,9 @@
  export const reducer = (state, action) => {
    switch (action.type) {
    case 'FETCH_MARKET_DATA':
-     return {...state, marketData: action.payload }
+     return {...state, marketData: action.payload }; 
+    case 'SET_ACTIVE_SEASON':
+      return {...state, activeSeason: action.payload };
    default:
      return {...state};
    }

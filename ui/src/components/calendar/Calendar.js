@@ -10,7 +10,7 @@ import '../../styles/Calendar.scss'
 function Calendar() {
 
   const { state, dispatch } = React.useContext(Store);
-  React.useEffect(() => fetchMarketData(dispatch), [dispatch]);
+  React.useEffect(() => { fetchMarketData(dispatch) }, []);
   // console.log(state.marketData);
   if (state.marketData !== null) {
     const sortedVegetablesInSeason = sortVegetables(state);

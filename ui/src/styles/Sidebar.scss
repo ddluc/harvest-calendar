@@ -1,0 +1,15 @@
+@import '__theme.scss';
+
+.sidebar {
+  padding: 40px 22px;
+  background-color: $grey-2;
+  h2 {
+    margin: 0px;
+  }
+  h4 {
+    margin: 10px 0px;
+  }
+  span {
+    font-size: 13px;
+  }
+}

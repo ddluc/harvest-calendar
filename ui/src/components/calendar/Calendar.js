@@ -12,13 +12,10 @@ function Calendar() {
 
   const { state, dispatch } = React.useContext(Store);
   React.useEffect(() => { fetchMarketData(dispatch) }, []);
-  // console.log(state.marketData);
   if (state.marketData !== null) {
     const sortedVegetablesInSeason = sortVegetables(state);
     const monthsInSeason = getMonthsInSeason(state);
     const cellMap = buildCellMap(state);
-    console.log(monthsInSeason);
-    console.log(cellMap); 
     return (
       <div className="calendar">
         <CalendarHeader

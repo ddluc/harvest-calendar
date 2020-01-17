@@ -13,15 +13,19 @@ export const getMonthsInSeason = (state) => {
   let monthsInSeason = [];
   let order = [];
   switch (activeSeason) {
+    // Spring
     case 1:
       order = ['MAR', 'APR', 'MAY', 'JUN'];
       break;
+    // Summer
     case 2:
       order = ['JUN', 'JUL', 'AUG', 'SEP'];
       break;
+    // Fall
     case 3:
       order = ['SEP', 'OCT', 'NOV', 'DEC'];
       break;
+    // Winter
     case 4:
       order = ['DEC', 'JAN', 'FEB', 'MAR'];
       break;

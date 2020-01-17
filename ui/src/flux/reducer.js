@@ -19,6 +19,8 @@
      return {...state, marketData: action.payload };
     case 'SET_ACTIVE_SEASON':
       return {...state, activeSeason: action.payload, activeMonth: null, activeSegment: null };
+    case 'SET_ACTIVE_SEGMENT':
+      return {...state, activeSegment: action.payload.segment, activeMonth: action.payload.month}
     case 'APPLY_SEARCH_FILTER':
       return {...state, searchInput: action.payload };
    default:

@@ -10,7 +10,7 @@
 }
 
 .header-cell.cell-label {
-  order: -1; 
+  order: -1;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -58,7 +58,12 @@
   text-align: center;
 }
 
-.sub-header-cell.cell-1 {
+.sub-header-cell:hover {
+  cursor: pointer;
+  font-weight: bold; 
+}
+
+.sub-header-cell.label-cell {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;

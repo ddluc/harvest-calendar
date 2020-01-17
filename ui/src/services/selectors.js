@@ -81,8 +81,6 @@ export const sortVegetables = (state) => {
  */
 export const filterVegetables = (state, vegetables) => {
   let { searchInput } = state;
-  console.log(searchInput);
-  console.log(vegetables);
   if (searchInput !== '' && searchInput.length > 2) {
     let filteredVegetables = [];
     vegetables.forEach((veg) => {

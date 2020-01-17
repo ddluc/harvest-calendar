@@ -19,6 +19,13 @@ export const setActiveSeason = (dispatch, season) => {
   });
 }
 
+export const setActiveSegment = (dispatch, month, segment) => {
+  dispatch({
+    type: 'SET_ACTIVE_SEGMENT',
+    payload: {segment: segment.id, month: month.key}
+  })
+}
+
 export const applySearchFilter = (dispatch, userInput) => {
   dispatch({
     type: 'APPLY_SEARCH_FILTER',

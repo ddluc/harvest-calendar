@@ -6,56 +6,28 @@
 /**
  * getMonthsInSeason
  * @description gets the months for the active season
- * @param <Array> months — array of months
- * @param <Number> season — the id of the active season (1,2,3,4)
+ * @param <Object> state - application state
  */
-export const getMonthsInSeason = (months, season) => {
+export const getMonthsInSeason = (state) => {
+  let { months } = state.marketData;
+  let { activeSeason } = state;
   let monthsInSeason = [];
   months.forEach((month) => {
-    if (month.season.includes(season)) {
+    if (month.season.includes(activeSeason)) {
       monthsInSeason.push(month);
     }
   });
   return monthsInSeason;
 };
 
-/**
- * getVegetablesInSeason
- * @description gets the vegetables for the active season
- * @param <Array> vegetables - array of vegetable objects
- * @param <Array> months — array of months
- * @param <Number> season — the id of the active season (1,2,3,4)
- */
-export const getVegetablesInSeason = (vegetables, months, season) => {
-  let vegetablesInSeason = [];
-  const monthsInSeason = getMonthsInSeason(months, season);
-  const monthKeys = monthsInSeason.map((month) => month.key);
-  vegetables.forEach((vegetable) => {
-    let inSeason = false;
-    vegetable.mPos.forEach((mPos) => {
-      if (monthKeys.includes(mPos.month)){
-        if (mPos.status !== 'none') {
-          inSeason = true;
-        }
-      }
-    });
-    if (inSeason) {
-      vegetablesInSeason.push({ ...vegetable})
-    }
-  });
-  vegetablesInSeason.sort((a, b) => b.mPosCount - a.mPosCount);
-  return vegetablesInSeason;
-};
 
 /**
- * sortVegetablesByScore
+ * sortVegetables
  * @description sorts the vegetables by custom algorithm to determine how in season it is
- * @param <Array> vegetables - array of vegetable objects
- * @param <Array> months — array of months
- * @param <Number> season — the id of the active season (1,2,3,4)
+ * @param <Object> state - application state
  */
 export const sortVegetables = (state) => {
-  let {marketData,  activeMonth, activeSegment} = state;
+  let {marketData, activeMonth, activeSegment} = state;
   let peak = [];
   let early = [];
   let late = [];
@@ -72,26 +44,22 @@ export const sortVegetables = (state) => {
       }
     });
   });
-
   let sortedVegetables = [...peak, ...early, ...late, ...off, ...none ];
-
-  console.log(sortedVegetables);
   return sortedVegetables;
 };
 
 /**
  * buildCellMap
  * @description maps css grid cell indexes to month/segment
- * @param <Array> months — array of months
- * @param <Number> season — the id of the active season (1,2,3,4)
+ * @param <Object> state - application state
  * @returns <Object> cellMap — a map of cell indexes
  */
-export const buildCellMap = (months, season) => {
+export const buildCellMap = (state) => {
   let cellMap = {body: {}, header: {}};
   let bodyCellIndex = 1;
   let headerCellIndex = 1;
   let segments = buildSegmentMap();
-  let monthsInSeason = getMonthsInSeason(months, season);
+  let monthsInSeason = getMonthsInSeason(state);
   monthsInSeason.forEach((month) => {
     cellMap.header[month.key] = headerCellIndex;
     headerCellIndex++;
@@ -100,7 +68,7 @@ export const buildCellMap = (months, season) => {
       cellMap.body[key] = bodyCellIndex;
       bodyCellIndex++;
     });
-  });
+   });
   return cellMap;
 };
 

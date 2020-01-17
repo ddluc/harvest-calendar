@@ -7,7 +7,7 @@ import '../../styles/CalendarRow.css'
 
 function CalendarRow({vegetable, cellMap}) {
   const { state, dispatch } = React.useContext(Store);
-  const months = getMonthsInSeason(state.marketData.months, state.activeSeason);
+  const months = getMonthsInSeason(state);
   let cells = [];
   vegetable.mPos.forEach((mPos) => {
     let cellKey = `${mPos.month}-${mPos.segment}`;

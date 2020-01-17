@@ -24,10 +24,9 @@ function Calendar() {
   // console.log(state.marketData);
 
   if (state.marketData !== null) {
-    const vegetablesInSeason = getVegetablesInSeason(state.marketData.vegetables, state.marketData.months, state.activeSeason);
     const sortedVegetablesInSeason = sortVegetables(state);
-    const monthsInSeason = getMonthsInSeason(state.marketData.months, state.activeSeason);
-    const cellMap = buildCellMap(state.marketData.months, state.activeSeason);
+    const monthsInSeason = getMonthsInSeason(state);
+    const cellMap = buildCellMap(state);
     return (
       <div className="calendar">
         <CalendarHeader

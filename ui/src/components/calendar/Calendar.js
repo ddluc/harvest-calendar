@@ -4,7 +4,7 @@ import CalendarRow from './CalendarRow';
 import { Store } from '../../flux/store';
 import { fetchMarketData } from '../../flux/actions';
 import { getMonthsInSeason, sortVegetables } from '../../services/selectors';
-import { buildCellMap } from '../../services/cellMap';
+import { buildCellMap } from '../../services/selectors';
 
 import '../../styles/Calendar.scss'
 
@@ -16,7 +16,9 @@ function Calendar() {
   if (state.marketData !== null) {
     const sortedVegetablesInSeason = sortVegetables(state);
     const monthsInSeason = getMonthsInSeason(state);
-    const cellMap = buildCellMap(state.activeSeason);
+    const cellMap = buildCellMap(state);
+    console.log(monthsInSeason);
+    console.log(cellMap); 
     return (
       <div className="calendar">
         <CalendarHeader

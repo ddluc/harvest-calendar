@@ -3,7 +3,7 @@ import Cell from './Cell';
 import { Store } from '../../flux/store';
 import { getMonthsInSeason } from '../../services/selectors';
 
-import '../../styles/CalendarRow.css'
+import '../../styles/CalendarRow.scss'
 
 function CalendarRow({vegetable, cellMap}) {
   const { state, dispatch } = React.useContext(Store);

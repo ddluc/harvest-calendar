@@ -1,3 +1,5 @@
+@import '__theme.scss';
+
 .calendar-row {
   display: grid;
   grid-gap: 1px;
@@ -10,9 +12,17 @@
   padding-top: 15px;
 }
 
+.cell.pricingMode{
+  font-size: 9px;
+}
+
 .calendar-cell.cell-label {
   order: -1;
   text-align: left;
+  padding-left: 20px;
+  color: $charcol;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .calendar-cell.cell-1 {

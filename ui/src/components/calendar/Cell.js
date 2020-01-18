@@ -8,7 +8,7 @@ function Cell ({mPos, cellIndex, id, isActive}) {
   let cellContent = '';
 
   if (state.pricingMode == 'on') {
-    cellContent = mPos.value > 0 ? mPos.value : '-'; 
+    cellContent = mPos.value > 0 ? `${mPos.value}` : '-';
   } else if (mPos.status === 'none' || mPos.status === 'off') {
     cellContent = '-';
   } else if (mPos.status === 'early') {
@@ -19,7 +19,7 @@ function Cell ({mPos, cellIndex, id, isActive}) {
     cellContent = 'L'
   }
 
-  return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive} ${mPos.status}`}>{cellContent}</div>);
+  return (<div id={id} className={`calendar-cell cell-${cellIndex} ${isActive} ${mPos.status}`} >{cellContent}</div>);
 
 };
 

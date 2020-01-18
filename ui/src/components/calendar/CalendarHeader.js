@@ -3,7 +3,7 @@ import { Store } from '../../flux/store';
 import { getMonthsInSeason, buildSegmentMap } from '../../services/selectors';
 import { setActiveSegment } from '../../flux/actions';
 
-import '../../styles/CalendarHeader.css'
+import '../../styles/CalendarHeader.scss'
 
 function CalendarHeader({view, cellMap, months}) {
     const { state, dispatch } = React.useContext(Store);
@@ -32,9 +32,9 @@ function CalendarHeader({view, cellMap, months}) {
     })
     return (
       <div className="calendar-header">
-        <div className="header-cell label-cell">Vegetable</div>
+        <div className="header-cell cell-label">Vegetable</div>
         { header }
-        <div className="sub-header-cell label-cell"></div>
+        <div className="sub-header-cell cell-label"></div>
         { subHeader }
       </div>
     );

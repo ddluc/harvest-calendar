@@ -8,7 +8,10 @@
         <g id="Icons" transform="translate(-68.000000, -387.000000)">
             <g id="early" transform="translate(68.000000, 387.000000)">
                 <rect id="Rectangle-10" fill="#F3EB90" x="0" y="0" width="200" height="200"></rect>
-                <circle id="Oval-2" stroke="#AEA64C" stroke-width="4" fill-opacity="0.259935462" fill="#AEA53F" cx="100.5" cy="100.5" r="60.5"></circle>
+                <circle id="Oval-2" stroke="#908C5C" stroke-width="4" fill="#F3ECA0" cx="100.5" cy="100.5" r="60.5"></circle>
+                <text id="E" font-family="Avenir-Heavy, Avenir" font-size="90" font-weight="600" letter-spacing="4.33928633" fill="#908C5C">
+                    <tspan x="70.3353568" y="128">E</tspan>
+                </text>
             </g>
         </g>
     </g>

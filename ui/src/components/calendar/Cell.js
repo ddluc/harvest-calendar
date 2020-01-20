@@ -1,7 +1,10 @@
 import React from 'react';
+import PeakIcon  from '../icons/peak';
+import LateIcon  from '../icons/late';
+import EarlyIcon from '../icons/early';
 import { Store } from '../../flux/store';
-
 import '../../styles/Cell.scss'
+
 
 function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
 
@@ -10,16 +13,19 @@ function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
   let cellContent = '';
 
   if (state.pricingMode === true) {
-    let subContent = mPos.value > 0 ? `$${mPos.value}` : '-';
-    cellContent = (<div>{subContent}<span>{mPos.unit}</span></div>);
+    if (mPos.value > 0) {
+      cellContent = (<div>{mPos.value}<span>{mPos.unit}</span></div>);
+    } else {
+      cellContent = '-';
+    }
   } else if (mPos.status === 'none' || mPos.status === 'off') {
     cellContent = '-';
   } else if (mPos.status === 'early') {
-    cellContent = 'E';
+    cellContent = <EarlyIcon />;
   } else if (mPos.status === 'peak') {
-    cellContent = 'P'
+    cellContent = <PeakIcon />
   } else if (mPos.status === 'late') {
-    cellContent = 'L'
+    cellContent = <LateIcon />
   }
 
   let classNames = `${mPos.status}`;

@@ -5,13 +5,19 @@
   padding-top: 15px;
   border-top: solid 1px $grey-4;
   border-right: solid 1px $grey-4;
+
+  .icon {
+    text-align: center;
+    width: 80%;
+    margin: 0px auto;
+  }
 }
 
 .calendar-cell.active {
   font-weight: bold;
   color: $charcol;
-  border-left: solid 2px $charcol;
-  border-right: solid 2px $charcol; 
+  border-left: outset 2px $charcol;
+  border-right: outset 2px $charcol;
 }
 
 .calendar-cell.price{

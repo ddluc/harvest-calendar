@@ -25,7 +25,7 @@ function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
   } else if (mPos.status === 'peak') {
     cellContent = <PeakIcon />
   } else if (mPos.status === 'late') {
-    cellContent = <LateIcon />
+    cellContent = <EarlyIcon />;
   }
 
   let classNames = `${mPos.status}`;

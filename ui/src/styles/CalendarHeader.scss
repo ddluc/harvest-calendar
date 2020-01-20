@@ -2,7 +2,6 @@
 
 .calendar-header {
   display: grid;
-  grid-gap: 1px;
   grid-template-columns: 33% repeat(12, 1fr);
   grid-template-rows: 50px 30px;
 }
@@ -11,6 +10,8 @@
   padding-top: 10px;
   background-color: $grey-4;
   color: $white;
+  border-top: solid 1px $charcol;
+  border-right: solid 1px $charcol;
   font-size: 16px;
   font-weight: bold;
 }
@@ -67,10 +68,19 @@
 .sub-header-cell {
   background-color: $grey-2;
   text-align: center;
+  border-top: solid 1px $charcol;
+  border-right: solid 1px $charcol;
 }
+
 
 .sub-header-cell:hover {
   cursor: pointer;
+  font-weight: bold;
+}
+
+.sub-header-cell.active {
+  background-color: $charcol;
+  color: $white;
   font-weight: bold;
 }
 

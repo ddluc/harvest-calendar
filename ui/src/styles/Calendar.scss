@@ -5,6 +5,7 @@
   margin: 2% auto 2% auto;
   overflow: hidden;
   background-color: #ededed;
+  border: solid 1px $charcol;
 }
 
 .calendar-body {
@@ -13,10 +14,4 @@
   @media (max-width: $tablet-view) {
     max-height: 60vh;
   }
-}
-
-.active {
-  font-weight: bold;
-  background-color: $charcol;
-  color: $grey-1;
 }

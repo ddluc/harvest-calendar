@@ -10,7 +10,7 @@
    activeSeason: 1,
    activeMonth: 'MAY',
    activeSegment: 2,
-   pricingMode: 'off',
+   pricingMode: false,
  };
 
  export const reducer = (state, action) => {

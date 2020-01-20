@@ -5,6 +5,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .app {
@@ -14,7 +15,7 @@ body {
   height: 100vh;
   grid-template-columns: 280px 1fr;
   grid-template-rows: 50px 1fr;
-  background-color: $white;
+  background-color: $white; 
 }
 
 .app .sidebar {
@@ -42,5 +43,4 @@ body {
     grid-row-start: 2;
     grid-row-end: 3;
   }
-  background-color: $grey-1;
 }

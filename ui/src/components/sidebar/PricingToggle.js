@@ -12,14 +12,14 @@ function PricingToggle() {
    let label = '';
    let updateValue = '';
 
-   if (state.pricingMode === 'off') {
+   if (state.pricingMode === false ) {
      status = 'off';
      label = 'OFF';
-     updateValue = 'on';
-   } else if (state.pricingMode === 'on') {
+     updateValue = true;
+   } else if (state.pricingMode === true) {
      status = 'on';
      label = ' ON ';
-     updateValue = 'off';
+     updateValue = false;
    }
 
   return (

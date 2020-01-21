@@ -13,6 +13,7 @@ function App() {
         <Sidebar />
         <div className="main">
           <Calendar />
+          <div className="acknowledgement"><span>Developed by <a href="http://ddluc.com">DDLUC Engineering, LLC</a></span></div>
         </div>
       </div>
     </StoreProvider>

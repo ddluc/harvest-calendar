@@ -8,6 +8,12 @@ body {
 
 }
 
+a {
+  color: $charcol;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
 .app {
   display: grid;
   overflow: hidden;
@@ -15,7 +21,7 @@ body {
   height: 100vh;
   grid-template-columns: 280px 1fr;
   grid-template-rows: 50px 1fr;
-  background-color: $white; 
+  background-color: $white;
 }
 
 .app .sidebar {
@@ -43,4 +49,12 @@ body {
     grid-row-start: 2;
     grid-row-end: 3;
   }
+}
+
+.app .acknowledgement {
+  width: 95%;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 12px;
+  font-family: monospace;
 }

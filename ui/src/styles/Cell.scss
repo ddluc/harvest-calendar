@@ -11,6 +11,20 @@
     width: 80%;
     margin: 0px auto;
   }
+
+  .status {
+    display: none;
+  }
+}
+
+.calendar-cell:hover {
+  cursor: pointer;
+  .icon {
+    display: none;
+  }
+  .status {
+    display: block;
+  }
 }
 
 .calendar-cell.active {
@@ -20,7 +34,7 @@
   border-right: outset 2px $charcol;
 }
 
-.calendar-cell.price{
+.calendar-cell.price {
   padding-top: 8px;
   font-size: 14px;
   &.none {
@@ -31,14 +45,18 @@
 
 }
 
+
 .calendar-cell.early {
   background-color: $early;
+  color: darken($early, 50);
 }
 
 .calendar-cell.peak {
   background-color: $peak;
+  color: darken($peak, 30);
 }
 
 .calendar-cell.late {
   background-color: $early;
+  color: darken($early, 50);
 }

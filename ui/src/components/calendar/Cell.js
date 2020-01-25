@@ -11,21 +11,22 @@ function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
   const { state, dispatch } = React.useContext(Store);
 
   let cellContent = '';
+  const statusDisplay = mPos.status.charAt(0).toUpperCase() + mPos.status.slice(1)
 
   if (state.pricingMode === true) {
     if (mPos.value > 0) {
-      cellContent = (<div>{mPos.value}<span>{mPos.unit}</span></div>);
+      cellContent = (<div>{mPos.value}<span class="unit">{mPos.unit}</span></div>);
     } else {
       cellContent = '-';
     }
   } else if (mPos.status === 'none' || mPos.status === 'off') {
     cellContent = '-';
   } else if (mPos.status === 'early') {
-    cellContent = <EarlyIcon />;
+    cellContent = (<div><EarlyIcon /><span class="status">{statusDisplay}</span></div>);
   } else if (mPos.status === 'peak') {
-    cellContent = <PeakIcon />
+    cellContent = (<div><PeakIcon /><span class="status">{statusDisplay}</span></div>);
   } else if (mPos.status === 'late') {
-    cellContent = <EarlyIcon />;
+    cellContent = (<div><EarlyIcon /><span class="status">{statusDisplay}</span></div>);
   }
 
   let classNames = `${mPos.status}`;

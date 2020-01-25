@@ -84,7 +84,9 @@ export const filterVegetables = (state, vegetables) => {
   if (searchInput !== '' && searchInput.length > 2) {
     let filteredVegetables = [];
     vegetables.forEach((veg) => {
-      if (veg.label.includes(searchInput)) {
+      let formattedLabel = veg.label.toLowerCase();
+      let formattedInput = searchInput.trim().toLowerCase();
+      if (formattedLabel.includes(formattedInput)) {
         filteredVegetables.push(veg);
       }
     });

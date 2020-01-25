@@ -7,7 +7,7 @@ button:focus {
 button.primary{
   font-size: 14px;
   padding: 2px 6px 2px 4px;
-  color: $charcol;
+  color: $grey-1;
   border: none;
   background-color: transparent;
   position: relative;
@@ -17,9 +17,9 @@ button.primary.active {
   font-size: 14px;
   padding: 4px 8px 4px 28px;
   color: $charcol;
-  background-color: $grey-3;
+  background-color: $grey-2;
   border-radius: 8px;
-  border: solid 1px $grey-3;
+  border: solid 1px $grey-2;
 }
 
 button.primary:hover {

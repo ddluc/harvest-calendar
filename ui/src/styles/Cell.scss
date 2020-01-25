@@ -3,8 +3,8 @@
 .calendar-cell {
   text-align: center;
   padding-top: 15px;
-  border-top: solid 1px $grey-4;
-  border-right: solid 1px $grey-4;
+  // border-top: solid 1px $grey-4;
+  // border-right: solid 1px $grey-4;
 
   .icon {
     text-align: center;
@@ -59,4 +59,8 @@
 .calendar-cell.late {
   background-color: $early;
   color: darken($early, 50);
+}
+
+.calendar-cell.none, .calendar-cell.off {
+  background-color: $grey-2;
 }

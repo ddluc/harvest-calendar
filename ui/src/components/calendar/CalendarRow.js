@@ -19,10 +19,9 @@ function CalendarRow({vegetable, cellMap}) {
       cells.push(<Cell key={id} mPos={mPos} id={id} cellIndex={cellIndex} isActive={isActive} showPrice={showPrice}/>);
     }
   });
-
   return (
     <div className="calendar-row">
-      <div className="calendar-cell cell-label">{vegetable.label}</div>
+      <div className={`calendar-cell cell-label`}>{vegetable.label}</div>
       { cells }
     </div>
   );

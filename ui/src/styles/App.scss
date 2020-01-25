@@ -11,13 +11,12 @@ body {
 a {
   color: $charcol;
   font-weight: bold;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .app {
   display: grid;
   overflow: hidden;
-  grid-gap: 4px;
   height: 100vh;
   grid-template-columns: 280px 1fr;
   grid-template-rows: 50px 1fr;
@@ -43,6 +42,7 @@ a {
   align-self: stretch;
   grid-row-start: 1;
   grid-row-end: 3;
+  background-color: $grey-1;
   @media( max-width: $tablet-view) {
     grid-column-start: 1;
     grid-column-end: 3;

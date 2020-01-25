@@ -5,12 +5,13 @@
   margin: 2% auto 10px auto;
   overflow: hidden;
   background-color: #ededed;
-  border: solid 1px $charcol;
+  border: solid 2px $charcol;
 }
 
 .calendar-body {
   max-height: 80vh;
   overflow: scroll;
+  border-top: solid 2px $charcol;
   @media (max-width: $tablet-view) {
     max-height: 60vh;
   }

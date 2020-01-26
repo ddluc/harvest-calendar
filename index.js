@@ -3,10 +3,14 @@ const Api = require('./api/api');
 const cors = require('cors');
 
 const app = express();
-const port = 3300;
+const port = process.env.PORT;
 
-app.use(cors());
+if (process.env.ENV === 'development') {
+  app.use(cors());
+  console.log(`HARVEST APP API: Running in ${process.env.ENV} mode`);
+}
+
 app.use(express.static('public'));
 
 app.get('/api/market_data', Api.getMarketData);
-app.listen(port, () => console.log(`Harvest Calendar listening on port ${port}`))
+app.listen(port, () => console.log(`HARVEST APP API: Listening on port ${port}`))

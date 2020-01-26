@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon --watch api index.js",
+    "dev": "nodemon --watch api --watch index.js",
     "data-import": "node sql/importer/import.js",
     "build-ui": "cp ui/build/. public/",
     "test": "echo \"Error: no test specified\" && exit 1"

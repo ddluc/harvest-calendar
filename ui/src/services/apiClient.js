@@ -5,7 +5,13 @@
 import axios from 'axios';
 
 const getBaseURL = () => {
-  return 'http://localhost:3300';
+  let baseURL = '';
+  if (document.location.hostname === 'localhost') {
+    baseURL = 'http://localhost:3300';
+  } else {
+    baseURL = 'http://harvestapp.ddluc.com';
+  }
+  return baseURL;
 }
 
 export const getMarketData = async () => {

@@ -20,7 +20,7 @@ VALUES
   ('celery', 'Celery'),
   ('chanterelle', 'Chanterelle'),
   ('corn', 'Corn'),
-  ('cucumbers', 'Cucumbers'),
+  ('cucumber', 'Cucumbers'),
   ('eggplant', 'Eggplant'),
   ('fava_bean', 'Fava Beans'),
   ('garlic', 'Garlic'),

@@ -4,9 +4,9 @@
   "description": "A simple backend to the harvest calendar app",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon --watch src src/app.js",
-    "data-import": "node src/importer/import.js",
+    "start": "node api/app.js",
+    "dev": "nodemon --watch src api/app.js",
+    "data-import": "node api/importer/import.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Lucas",

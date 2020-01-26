@@ -12,8 +12,10 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-        <h2>{state.appTitle}</h2>
-        <span>For Willamette Valley Farmers Markets</span>
+        <div class="sidebar-title">
+          <h2>{state.appTitle}</h2>
+          <span>For Willamette Valley Farmers Markets</span>
+        </div>
         <SearchField placeholder="Search..."/>
         <SeasonPicker />
         <PricingToggle />

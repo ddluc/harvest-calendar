@@ -6,6 +6,9 @@
   overflow: hidden;
   background-color: #ededed;
   border: solid 2px $charcol;
+  @media (max-width: $mobile-view) {
+    display: none;
+  }
 }
 
 .calendar-body {

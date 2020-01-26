@@ -19,7 +19,7 @@ a {
   overflow: hidden;
   height: 100vh;
   grid-template-columns: 280px 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 80px 1fr;
   background-color: $white;
 }
 
@@ -33,6 +33,7 @@ a {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    overflow: hidden;
   }
 }
 
@@ -57,4 +58,17 @@ a {
   text-align: right;
   font-size: 12px;
   font-family: monospace;
+  @media( max-width: $mobile-view) {
+    display: none;
+  }
+}
+
+.app .mobile-warning {
+  display: none;
+  @media( max-width: $mobile-view) {
+    display: block;
+    width: 80%;
+    margin: 100px auto;
+    text-align: center;
+  }
 }

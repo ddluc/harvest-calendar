@@ -32,6 +32,10 @@ services:
       - 9999:80
     logging:
       driver: none
+    volumes:
+      - type: bind
+        source: ./pgadmin
+        target: /var/lib/pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: daniel@ddluc.com
       PGADMIN_DEFAULT_PASSWORD: pgadmin_pass

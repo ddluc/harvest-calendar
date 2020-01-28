@@ -1,23 +1,15 @@
 
-const knex = require('knex')({
-  client: 'pg',
-  connection: {
-    host : process.env.DB_HOST,
-    user : process.env.DB_USER,
-    password : process.env.DB_PASS,
-    database : process.env.DB_NAME
-  }
-});
+let db = require('./db');
 
 class Api {
 
   static async getMarketData (req, res) {
     try {
-      const months = await knex('month').select();
-      const seasons = await knex('season').select();
-      const vegetables = await knex('vegetable').select();
+      const months = await db('month').select();
+      const seasons = await db('season').select();
+      const vegetables = await db('vegetable').select();
       for (let vegetable of vegetables) {
-        const mPos = await knex('market_position')
+        const mPos = await db('market_position')
           .where({vegetable: vegetable.key})
           .select('id', 'month', 'segment', 'value', 'unit', 'status');
         vegetable.mPos = mPos;

@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "A simple backend to the harvest calendar app",
   "main": "app.js",
+  "engine": {
+    "node": "10.x"
+  },
   "scripts": {
-    "start": "node app.js",
+    "start": "node index.js",
     "dev": "nodemon --watch api --watch index.js",
     "data-import": "node sql/importer/import.js",
     "build-ui": "cp ui/build/. public/",

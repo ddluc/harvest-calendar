@@ -6,7 +6,7 @@
 let connection = null;
 
 if (process.env.NODE_ENV === 'production') {
-  conneciton = process.env.DATABASE_URL
+  connection = process.env.DATABASE_URL
 } else {
   connection = {
     host : process.env.DB_HOST,
@@ -15,6 +15,7 @@ if (process.env.NODE_ENV === 'production') {
     database : process.env.DB_NAME
   }
 }
+
 
 const knex = require('knex')({
   client: 'pg',

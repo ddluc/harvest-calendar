@@ -5,10 +5,11 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT;
 
-if (process.env.ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   app.use(cors());
-  console.log(`HARVEST APP API: Running in ${process.env.ENV} mode`);
 }
+
+console.log(`HARVEST APP API: Running in ${process.env.NODE_ENV} mode`);
 
 app.use(express.static('public'));
 

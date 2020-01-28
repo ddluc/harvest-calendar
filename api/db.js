@@ -5,7 +5,7 @@
 
 let connection = null;
 
-if (process.env.ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   conneciton = process.env.DATABASE_URL
 } else {
   connection = {

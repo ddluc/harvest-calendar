@@ -9,7 +9,7 @@ const getBaseURL = () => {
   if (document.location.hostname === 'localhost') {
     baseURL = 'http://localhost:3300';
   } else {
-    baseURL = 'https://harvestapp.ddluc.com';
+    baseURL = 'https://harvest-calendar.herokuapp.com'
   }
   return baseURL;
 }

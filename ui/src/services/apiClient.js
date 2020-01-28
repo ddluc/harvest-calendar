@@ -9,7 +9,7 @@ const getBaseURL = () => {
   if (document.location.hostname === 'localhost') {
     baseURL = 'http://localhost:3300';
   } else {
-    baseURL = 'http://harvestapp.ddluc.com';
+    baseURL = 'https://harvestapp.ddluc.com';
   }
   return baseURL;
 }

@@ -16,6 +16,8 @@ if (process.env.NODE_ENV === 'production') {
   }
 }
 
+console.log('CONNECTING TO DB ', connection);
+
 const knex = require('knex')({
   client: 'pg',
   connection: connection

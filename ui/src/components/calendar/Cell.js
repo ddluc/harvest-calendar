@@ -22,11 +22,11 @@ function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
   } else if (mPos.status === 'none' || mPos.status === 'off') {
     cellContent = '-';
   } else if (mPos.status === 'early') {
-    cellContent = (<div><EarlyIcon /><span class="status">{statusDisplay}</span></div>);
+    cellContent = (<div><EarlyIcon /><span className="status">{statusDisplay}</span></div>);
   } else if (mPos.status === 'peak') {
-    cellContent = (<div><PeakIcon /><span class="status">{statusDisplay}</span></div>);
+    cellContent = (<div><PeakIcon /><span className="status">{statusDisplay}</span></div>);
   } else if (mPos.status === 'late') {
-    cellContent = (<div><EarlyIcon /><span class="status">{statusDisplay}</span></div>);
+    cellContent = (<div><EarlyIcon /><span className="status">{statusDisplay}</span></div>);
   }
 
   let classNames = `${mPos.status}`;

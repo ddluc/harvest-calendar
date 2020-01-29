@@ -12,7 +12,7 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-        <div class="sidebar-title">
+        <div className="sidebar-title">
           <h2>{state.appTitle}</h2>
           <span>For Willamette Valley Farmers Markets</span>
         </div>

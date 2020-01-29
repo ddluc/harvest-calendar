@@ -25,7 +25,7 @@ function PricingToggle() {
   return (
     <div className="pricing-toggle">
       <h4>Pricing Mode</h4>
-      <a class={`toggle ${status}`} onClick={() => setPricingMode(dispatch, updateValue)}>{label}</a>
+      <a className={`toggle ${status}`} onClick={() => setPricingMode(dispatch, updateValue)}>{label}</a>
     </div>
   );
 }

@@ -68,7 +68,12 @@ a {
   @media( max-width: $mobile-view) {
     display: block;
     width: 80%;
-    margin: 100px auto;
+    margin: 150px auto;
     text-align: center;
+
+    .icon {
+      width: 50px;
+      margin: 0 auto;
+    }
   }
 }

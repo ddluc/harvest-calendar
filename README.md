@@ -13,10 +13,8 @@ I build this project because I love vegetables. I highly value sustainability an
 - Flux implementation with React Hooks / Context
 - Functional design patterns for easy testability
 - Minimal dependencies:
-
   - API: 4 dependencies
   - UI: 8 dependencies (4 of which come by default with Create React App)
-
 - CSS grid
 - Express / Node.js / Postgres API backend
 - Docker
@@ -28,14 +26,25 @@ I build this project because I love vegetables. I highly value sustainability an
 **API**
 
 - Navigate to the project root `cd harvest-calendar`
+- Create `.env` file in project root:
+```
+  DB_HOST=postgres
+  DB_NAME=[database]
+  DB_USER=[user]
+  DB_PASS=[pass]
+  ENV=development
+  PORT=3300
+```
+- Run `npm install`
 - Run `docker-compose up`
-- The API should be running on 3300
+- The API should be running on port `3300`
 
 **UI**
 
 - Navigate to the 'ui' directory `cd harvest-calendar/ui`
+- Run `npm install`
 - Run `npm run start` -> This will start up the webpack build.
-- App should be listening on 3000\. To bundle the UI build see "Bundle the UI build" below
+- App should be listening on port `3000`. To bundle the UI build see "Bundle the UI build" below
 
 ### Importing Data
 

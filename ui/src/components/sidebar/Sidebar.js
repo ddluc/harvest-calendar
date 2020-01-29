@@ -21,7 +21,7 @@ function Sidebar() {
         <PricingToggle />
         < hr />
         <div className="menu-item"><a href="#">How to use this tool</a></div>
-        <div className="menu-item"><a href="#">Contribute your data</a></div>
+        <div className="menu-item"><a href="https://github.com/ddluc/harvest-calendar" target="_blank">View On Github</a></div>
     </div>
   );
 }

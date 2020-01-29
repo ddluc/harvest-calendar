@@ -6,6 +6,9 @@
   background-color: $charcol;
   grid-template-columns: 26% repeat(12, 1fr);
   grid-template-rows: 50px 30px;
+  @media(max-width: $tablet-view) {
+    grid-template-rows: 35px 25px;
+  }
 }
 
 .calendar .header-cell {
@@ -14,6 +17,9 @@
   color: $white;
   font-size: 16px;
   font-weight: bold;
+  @media(max-width: $tablet-view) {
+    padding-top: 5px;
+  }
 }
 
 .header-cell.cell-label {

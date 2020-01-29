@@ -10,7 +10,7 @@
     "start": "node index.js",
     "dev": "nodemon --watch api --watch index.js",
     "data-import": "node sql/importer/import.js",
-    "build-ui": "./scripts/build_ui.sh",
+    "build": "./scripts/build_ui.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Lucas",

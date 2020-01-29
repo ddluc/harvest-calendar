@@ -3,9 +3,9 @@
 .calendar-cell {
   text-align: center;
   padding-top: 15px;
-  // border-top: solid 1px $grey-4;
-  // border-right: solid 1px $grey-4;
-
+  @media(max-width: $tablet-view) {
+  padding-top: 8px; 
+  }
   .icon {
     text-align: center;
     width: 80%;

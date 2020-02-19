@@ -15,11 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose",
     "eject": "react-scripts eject"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "/src/components/__tests/setupTests.js"
   },
   "browserslist": {
     "production": [

@@ -6,6 +6,7 @@
  * getMonthsInSeason
  * @description gets the months for the active season
  * @param <Object> state - application state
+ * @return <Object> monthsInSeason - the month objects
  */
 export const getMonthsInSeason = (state) => {
   let { months } = state.marketData;
@@ -32,6 +33,7 @@ export const getMonthsInSeason = (state) => {
     default:
       order = ['MAR', 'APR', 'MAY', 'JUN'];
   }
+  // maps the month objects to the display order keys
   order.forEach((key) => {
     months.forEach((month) => {
       if (month.key === key) {

@@ -80,6 +80,7 @@ export const sortVegetables = (state) => {
  * filterVegetables
  * @description filters the vegetables to the user's search query
  * @param <Object> state - application state
+ * @returns <Array> vegetables; 
  */
 export const filterVegetables = (state, vegetables) => {
   let { searchInput } = state;

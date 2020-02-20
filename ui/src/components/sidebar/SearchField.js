@@ -1,12 +1,12 @@
 import React from 'react';
-import { useStore } from '../../flux/store';
+import { Store } from '../../flux/store';
 import { applySearchFilter } from '../../flux/actions';
 
 import '../../styles/SearchField.scss'
 
 function SearchField({placeholder}) {
 
-  const { state, dispatch } = useStore(); 
+  const { state, dispatch } = React.useContext(Store);
 
   return (
     <div className="search-field">

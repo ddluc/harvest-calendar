@@ -1,16 +1,16 @@
 import React from 'react';
 import CalendarHeader from './CalendarHeader';
 import CalendarRow from './CalendarRow';
-import { useStore } from '../../flux/store';
+import { Store } from '../../flux/store';
 import { fetchMarketData } from '../../flux/actions';
-import { getMonthsInSeason, sortVegetables, filterVegetables } from '../../services/selectors';
-import { buildCellMap, buildSegmentMap } from '../../services/selectors';
+import { getMonthsInSeason, sortVegetables, filterVegetables, buildSegmentMap} from '../../services/selectors';
+import { buildCellMap } from '../../services/selectors';
 
 import '../../styles/Calendar.scss'
 
 function Calendar() {
 
-  const { state, dispatch } = useStore();
+  const { state, dispatch } = React.useContext(Store);
   React.useEffect(() => { fetchMarketData(dispatch) }, []);
   if (state.marketData !== null) {
     let vegetables = sortVegetables(state);

@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from './Button';
 import { setActiveSeason } from '../../flux/actions';
-import { useStore } from '../../flux/store';
+import { Store } from '../../flux/store';
 
 import '../../styles/SeasonPicker.scss'
 
 function SeasonPicker() {
 
-  const { state, dispatch } = useStore(); 
+  const { state, dispatch } = React.useContext(Store);
 
   return (
     <div className="season-picker">

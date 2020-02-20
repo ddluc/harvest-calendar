@@ -1,4 +1,4 @@
-import { getMockMarketData } from '../__mocks/marketData.mock.js';
+import { getMockMarketData } from '../__mocks/api.mock.js';
 
 export const getMockState = () => {
   return {

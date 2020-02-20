@@ -1,11 +1,10 @@
 import React from 'react';
 import { useStore } from '../../flux/store';
-import { getMonthsInSeason, buildSegmentMap } from '../../services/selectors';
 import { setActiveSegment } from '../../flux/actions';
 
 import '../../styles/CalendarHeader.scss'
 
-function CalendarHeader({view, cellMap, months}) {
+function CalendarHeader({segmentMap, cellMap, months}) {
     const { state, dispatch } = useStore();
     // Build header cells
     const header = months.map((month, index) => {
@@ -16,9 +15,8 @@ function CalendarHeader({view, cellMap, months}) {
     // Build subHeader cells
     let subHeader = [];
     months.forEach((month) => {
-      let segments = buildSegmentMap();
       let cellIndex = 1;
-      segments.forEach((segment) => {
+      segmentMap.forEach((segment) => {
         let cellKey = `${month.key}-${segment.id}`
         let isActive = ( cellKey === `${state.activeMonth}-${state.activeSegment}`) ? 'active' : '';
         let cell = (

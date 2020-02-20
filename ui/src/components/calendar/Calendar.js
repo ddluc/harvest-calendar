@@ -23,7 +23,7 @@ function Calendar() {
         <CalendarHeader
           months={monthsInSeason}
           cellMap={cellMap}
-          view={state.view} />
+          segmentMap={segmentMap} />
         <div className="calendar-body">
           {
             vegetables.map((vegetable) => {

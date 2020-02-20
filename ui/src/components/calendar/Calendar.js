@@ -16,7 +16,8 @@ function Calendar() {
     let vegetables = sortVegetables(state);
     vegetables = filterVegetables(state, vegetables);
     const monthsInSeason = getMonthsInSeason(state);
-    const cellMap = buildCellMap(state);
+    const segmentMap = buildSegmentMap();
+    const cellMap = buildCellMap(state, monthsInSeason, segmentMap);
     return (
       <div className="calendar">
         <CalendarHeader

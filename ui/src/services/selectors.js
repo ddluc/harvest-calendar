@@ -80,9 +80,13 @@ export const sortVegetables = (state) => {
  * filterVegetables
  * @description filters the vegetables to the user's search query
  * @param <Object> state - application state
- * @returns <Array> vegetables; 
+ * @returns <Array> vegetables — optional array specifying the list to filter
  */
-export const filterVegetables = (state, vegetables) => {
+export const filterVegetables = (state, list) => {
+  let { vegetables }  = state.marketData;
+  if (list) {
+    vegetables = list;
+  }
   let { searchInput } = state;
   if (searchInput !== '' && searchInput.length > 2) {
     let filteredVegetables = [];
@@ -104,9 +108,7 @@ export const filterVegetables = (state, vegetables) => {
  * @description maps the market data to the css grid
  * @param <Object> state - application state
  */
-export const buildCellMap = (state) => {
-  const segments = buildSegmentMap();
-  const months = getMonthsInSeason(state);
+export const buildCellMap = (state, months, segments) => {
   let cellMap = {body: {}, header: {}};
   let bodyCellIndex = 1;
   let headerCellIndex = 1;

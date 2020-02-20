@@ -1,23 +1,23 @@
 import { getMockState }  from './state.mock.js'
 
-export const mockGetMonthsInSeason = () => {
+export const mockGetMonthsInSeason = jest.fn(() => {
   return [
     { id: 3, label: 'March', key: 'MAR', season: [ 4, 1 ] },
     { id: 4, label: 'April', key: 'APR', season: [ 1 ] },
     { id: 5, label: 'May', key: 'MAY', season: [ 1 ] },
     { id: 6, label: 'June', key: 'JUN', season: [ 1, 2 ] }
   ];
-};
+});
 
-export const mockBuildSegmentMap = () => {
+export const mockBuildSegmentMap = jest.fn(() => {
   return [
     { id: 1, key: 'early', label: 'Early' },
     { id: 2, key: 'mid', label: 'Mid' },
     { id: 3, key: 'late', label: 'Late' }
   ];
-};
+});
 
-export const mockBuildCellMap = () => {
+export const mockBuildCellMap = jest.fn(() => {
   return { body:
      { 'MAR-1': 1,
        'MAR-2': 2,
@@ -33,13 +33,14 @@ export const mockBuildCellMap = () => {
        'JUN-3': 12 },
     header: { MAR: 1, APR: 2, MAY: 3, JUN: 4 }
   };
-};
+});
 
-
-export const mockFilterVegetables = () => {
+export const mockFilterVegetables = jest.fn(() => {
+  let mockAppState = getMockState();
   return mockAppState.marketData.vegetables;
-}
+});
 
-export const mockSortVegetables = () => {
-  return mockAppState.marketData.vegetables; 
-}
+export const mockSortVegetables = jest.fn(() => {
+  let mockAppState = getMockState();
+  return mockAppState.marketData.vegetables;
+});

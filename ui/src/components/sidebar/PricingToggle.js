@@ -1,12 +1,12 @@
 import React from 'react';
-import { Store } from '../../flux/store';
+import { useStore } from '../../flux/store';
 import {setPricingMode} from '../../flux/actions';
 
 import '../../styles/PricingToggle.scss';
 
 function PricingToggle() {
 
-   const { state, dispatch } = React.useContext(Store);
+   const { state, dispatch } = useStore(); 
 
    let status = '';
    let label = '';

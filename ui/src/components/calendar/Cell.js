@@ -2,13 +2,13 @@ import React from 'react';
 import PeakIcon  from '../icons/peak';
 import LateIcon  from '../icons/late';
 import EarlyIcon from '../icons/early';
-import { Store } from '../../flux/store';
+import { useStore } from '../../flux/store';
 import '../../styles/Cell.scss'
 
 
 function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
 
-  const { state, dispatch } = React.useContext(Store);
+  const { state, dispatch } = useStore();
 
   let cellContent = '';
   const statusDisplay = mPos.status.charAt(0).toUpperCase() + mPos.status.slice(1)

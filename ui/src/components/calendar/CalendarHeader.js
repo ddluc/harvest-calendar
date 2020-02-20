@@ -1,12 +1,12 @@
 import React from 'react';
-import { Store } from '../../flux/store';
+import { useStore } from '../../flux/store';
 import { getMonthsInSeason, buildSegmentMap } from '../../services/selectors';
 import { setActiveSegment } from '../../flux/actions';
 
 import '../../styles/CalendarHeader.scss'
 
 function CalendarHeader({view, cellMap, months}) {
-    const { state, dispatch } = React.useContext(Store);
+    const { state, dispatch } = useStore();
     // Build header cells
     const header = months.map((month, index) => {
       let cellIndex = cellMap.header[month.key];

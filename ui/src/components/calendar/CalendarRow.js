@@ -1,12 +1,12 @@
 import React from 'react';
 import Cell from './Cell';
-import { Store } from '../../flux/store';
+import { useStore } from '../../flux/store';
 import { getMonthsInSeason } from '../../services/selectors';
 
 import '../../styles/CalendarRow.scss'
 
 function CalendarRow({vegetable, cellMap}) {
-  const { state, dispatch } = React.useContext(Store);
+  const { state, dispatch } = useStore();
   const months = getMonthsInSeason(state);
   let cells = [];
   vegetable.mPos.forEach((mPos) => {

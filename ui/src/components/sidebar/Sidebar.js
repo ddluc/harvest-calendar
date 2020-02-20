@@ -1,5 +1,5 @@
 import React from 'react';
-import { Store } from '../../flux/store';
+import { useStore } from '../../flux/store';
 import SearchField from './SearchField';
 import SeasonPicker from './SeasonPicker';
 import PricingToggle from './PricingToggle';
@@ -8,7 +8,7 @@ import '../../styles/Sidebar.scss'
 
 function Sidebar() {
 
-  const { state } = React.useContext(Store);
+  const { state } = useStore();
 
   return (
     <div className="sidebar">

@@ -1,6 +1,5 @@
 import React from 'react';
 import CalendarHeader from '../../../components/calendar/CalendarHeader';
-import * as Store from '../../../flux/store';
 import { getMockState } from '../../__mocks/state.mock.js';
 import {
   mockBuildSegmentMap,
@@ -15,14 +14,14 @@ describe('CalendarHeader', () => {
 
   beforeEach(() => {
     jest
-      .spyOn(Store, 'useStore')
+      .spyOn(React, 'useContext')
       .mockImplementation(() => {
         return {state: mockAppState, dispatch: () => true}
       });
   });
 
   it('should render', () => {
-    
+
     const props = {
       segmentMap: mockBuildSegmentMap(),
       cellMap: mockBuildCellMap(),

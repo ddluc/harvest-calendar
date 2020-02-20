@@ -43,11 +43,6 @@ describe('Calendar', () => {
     expect(wrapper.find('.calendar-body')).toBeTruthy();
   });
 
-  it('should render a calendar row for each vegetable in state', () => {
-    let wrapper = shallow(<Calendar />);
-    expect(wrapper.contains(<CalendarRow />)).toBeTruthy(); 
-  })
-
   it('should fetch the marketData', () => {
     let wrapper = shallow(<Calendar />);
     expect(mockFetchMarketData).toHaveBeenCalled();

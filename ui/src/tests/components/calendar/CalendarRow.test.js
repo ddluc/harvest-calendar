@@ -1,5 +1,6 @@
 import React from 'react';
-import CalendarHeader from '../../../components/calendar/CalendarHeader';
+import CalendarRow from '../../../components/calendar/CalendarRow';
+import * as selectors from '../../../services/selectors';
 import { getMockState } from '../../__mocks/state.mock.js';
 import {
   mockBuildSegmentMap,
@@ -8,27 +9,29 @@ import {
 } from '../../__mocks/selectors.mock.js';
 import { shallow } from 'enzyme';
 
-describe('CalendarHeader', () => {
+describe('CalendarRow', () => {
 
-  let mockAppState = getMockState();
-
-  beforeEach(() => {
+  let generateMockState = (mockAppState) => {
     jest
       .spyOn(React, 'useContext')
       .mockImplementation(() => {
         return {state: mockAppState, dispatch: () => true}
       });
-  });
+  }
 
   it('should render', () => {
-
+    let mockState = getMockState();
+    // Random index vegetable array
+    let vegetableIndex = 10;
+    generateMockState(mockState);
     const props = {
-      segmentMap: mockBuildSegmentMap(),
+      key: 1,
+      months: mockGetMonthsInSeason(),
+      vegetable: mockState.marketData.vegetables[vegetableIndex],
       cellMap: mockBuildCellMap(),
-      months: mockGetMonthsInSeason()
     };
 
-    let wrapper = shallow(<CalendarHeader {...props} />);
+    let wrapper = shallow(<CalendarRow {...props} />);
     expect(wrapper).toMatchSnapshot();
   })
 });

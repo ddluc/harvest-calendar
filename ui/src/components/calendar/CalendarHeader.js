@@ -8,12 +8,14 @@ import '../../styles/CalendarHeader.scss'
 function CalendarHeader({segmentMap, cellMap, months}) {
     const { state, dispatch } = React.useContext(Store);
     // Build header cells
+    // TODO: break into sub-component for shallow-rendered tests
     const header = months.map((month, index) => {
       let cellIndex = cellMap.header[month.key];
       let id = `header-month-${month.key}`;
       return (<div key={month.id} id={id} className={`header-cell cell-${cellIndex}`}>{month.label}</div>);
     });
     // Build subHeader cells
+    // TODO: break into sub-component for shallow-rendered tests
     let subHeader = [];
     months.forEach((month) => {
       let cellIndex = 1;

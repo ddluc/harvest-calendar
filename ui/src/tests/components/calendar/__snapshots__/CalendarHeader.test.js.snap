@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarHeader should render 1`] = `
+<div
+  className="calendar-header"
+>
+  <div
+    className="header-cell cell-label"
+  >
+    Vegetable
+  </div>
+  <div
+    className="header-cell cell-1"
+    id="header-month-MAR"
+    key="3"
+  >
+    March
+  </div>
+  <div
+    className="header-cell cell-2"
+    id="header-month-APR"
+    key="4"
+  >
+    April
+  </div>
+  <div
+    className="header-cell cell-3"
+    id="header-month-MAY"
+    key="5"
+  >
+    May
+  </div>
+  <div
+    className="header-cell cell-4"
+    id="header-month-JUN"
+    key="6"
+  >
+    June
+  </div>
+  <div
+    className="sub-header-cell cell-label"
+  />
+  <div
+    className="sub-header-cell cell-1 "
+    key="MAR-1"
+    onClick={[Function]}
+  >
+    Early
+  </div>
+  <div
+    className="sub-header-cell cell-2 "
+    key="MAR-2"
+    onClick={[Function]}
+  >
+    Mid
+  </div>
+  <div
+    className="sub-header-cell cell-3 "
+    key="MAR-3"
+    onClick={[Function]}
+  >
+    Late
+  </div>
+  <div
+    className="sub-header-cell cell-1 "
+    key="APR-1"
+    onClick={[Function]}
+  >
+    Early
+  </div>
+  <div
+    className="sub-header-cell cell-2 "
+    key="APR-2"
+    onClick={[Function]}
+  >
+    Mid
+  </div>
+  <div
+    className="sub-header-cell cell-3 "
+    key="APR-3"
+    onClick={[Function]}
+  >
+    Late
+  </div>
+  <div
+    className="sub-header-cell cell-1 "
+    key="MAY-1"
+    onClick={[Function]}
+  >
+    Early
+  </div>
+  <div
+    className="sub-header-cell cell-2 active"
+    key="MAY-2"
+    onClick={[Function]}
+  >
+    Mid
+  </div>
+  <div
+    className="sub-header-cell cell-3 "
+    key="MAY-3"
+    onClick={[Function]}
+  >
+    Late
+  </div>
+  <div
+    className="sub-header-cell cell-1 "
+    key="JUN-1"
+    onClick={[Function]}
+  >
+    Early
+  </div>
+  <div
+    className="sub-header-cell cell-2 "
+    key="JUN-2"
+    onClick={[Function]}
+  >
+    Mid
+  </div>
+  <div
+    className="sub-header-cell cell-3 "
+    key="JUN-3"
+    onClick={[Function]}
+  >
+    Late
+  </div>
+</div>
+`;

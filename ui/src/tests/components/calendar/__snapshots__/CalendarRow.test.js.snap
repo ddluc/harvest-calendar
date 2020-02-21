@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarRow should render 1`] = `
+<div
+  className="calendar-row"
+>
+  <div
+    className="calendar-cell cell-label"
+  >
+    Celery
+  </div>
+  <Cell
+    cellIndex={1}
+    id="celery-MAR-1"
+    isActive=""
+    key="celery-MAR-1"
+    mPos={
+      Object {
+        "id": 3229,
+        "month": "MAR",
+        "segment": 1,
+        "status": "none",
+        "unit": "",
+        "value": "0.00",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={2}
+    id="celery-MAR-2"
+    isActive=""
+    key="celery-MAR-2"
+    mPos={
+      Object {
+        "id": 3230,
+        "month": "MAR",
+        "segment": 2,
+        "status": "none",
+        "unit": "",
+        "value": "0.00",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={3}
+    id="celery-MAR-3"
+    isActive=""
+    key="celery-MAR-3"
+    mPos={
+      Object {
+        "id": 3231,
+        "month": "MAR",
+        "segment": 3,
+        "status": "none",
+        "unit": "",
+        "value": "0.00",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={4}
+    id="celery-APR-1"
+    isActive=""
+    key="celery-APR-1"
+    mPos={
+      Object {
+        "id": 3232,
+        "month": "APR",
+        "segment": 1,
+        "status": "early",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={5}
+    id="celery-APR-2"
+    isActive=""
+    key="celery-APR-2"
+    mPos={
+      Object {
+        "id": 3233,
+        "month": "APR",
+        "segment": 2,
+        "status": "early",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={6}
+    id="celery-APR-3"
+    isActive=""
+    key="celery-APR-3"
+    mPos={
+      Object {
+        "id": 3234,
+        "month": "APR",
+        "segment": 3,
+        "status": "early",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={7}
+    id="celery-MAY-1"
+    isActive=""
+    key="celery-MAY-1"
+    mPos={
+      Object {
+        "id": 3235,
+        "month": "MAY",
+        "segment": 1,
+        "status": "early",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={8}
+    id="celery-MAY-2"
+    isActive="active"
+    key="celery-MAY-2"
+    mPos={
+      Object {
+        "id": 3236,
+        "month": "MAY",
+        "segment": 2,
+        "status": "peak",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={9}
+    id="celery-MAY-3"
+    isActive=""
+    key="celery-MAY-3"
+    mPos={
+      Object {
+        "id": 3237,
+        "month": "MAY",
+        "segment": 3,
+        "status": "peak",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={10}
+    id="celery-JUN-1"
+    isActive=""
+    key="celery-JUN-1"
+    mPos={
+      Object {
+        "id": 3238,
+        "month": "JUN",
+        "segment": 1,
+        "status": "peak",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={11}
+    id="celery-JUN-2"
+    isActive=""
+    key="celery-JUN-2"
+    mPos={
+      Object {
+        "id": 3239,
+        "month": "JUN",
+        "segment": 2,
+        "status": "peak",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+  <Cell
+    cellIndex={12}
+    id="celery-JUN-3"
+    isActive=""
+    key="celery-JUN-3"
+    mPos={
+      Object {
+        "id": 3240,
+        "month": "JUN",
+        "segment": 3,
+        "status": "peak",
+        "unit": "bunch",
+        "value": "1.99",
+      }
+    }
+    showPrice=""
+  />
+</div>
+`;

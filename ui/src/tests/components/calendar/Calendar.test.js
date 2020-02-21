@@ -16,44 +16,53 @@ import { shallow } from 'enzyme';
 
 describe('Calendar', () => {
 
-
-  let mockAppState = {};
-  let mockFetchMarketData = jest.fn(() => true);
-  beforeEach(() => {
-    mockAppState = getMockState();
+  let generateMockState = (mockAppState) => {
     jest
       .spyOn(React, 'useContext')
       .mockImplementation(() => {
         return {state: mockAppState, dispatch: () => true}
       });
+  }
+
+  let mockFetchMarketData = jest.fn(() => true);
+
+  beforeEach(() => {
     jest.spyOn(React, 'useEffect').mockImplementation(f => f());
     jest.spyOn(selectors, 'sortVegetables').mockImplementation(mockSortVegetables);
     jest.spyOn(selectors, 'filterVegetables').mockImplementation(mockFilterVegetables);
     jest.spyOn(selectors, 'getMonthsInSeason').mockImplementation(mockGetMonthsInSeason);
     jest.spyOn(selectors, 'buildCellMap').mockImplementation(mockBuildCellMap);
     jest.spyOn(actions, 'fetchMarketData') .mockImplementation(mockFetchMarketData);
-
-
   });
 
   it('should render if the market data is loaded', () => {
+    generateMockState(getMockState());
     let wrapper = shallow(<Calendar />);
-    expect(wrapper).toBeDefined();
-    expect(wrapper.find('.calendar')).toBeTruthy();
-    expect(wrapper.find('.calendar-body')).toBeTruthy();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should not render if the data has not loaded', () => {
+    let mockAppState = getMockState();
+    mockAppState.marketData = null;
+    generateMockState(mockAppState);
+    let wrapper = shallow(<Calendar />);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should fetch the marketData', () => {
+    generateMockState(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(mockFetchMarketData).toHaveBeenCalled();
   });
 
   it('should filter the vegetable results', () => {
+    generateMockState(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(mockFilterVegetables).toHaveBeenCalled();
   });
 
   it('should sort the vegetable results', () => {
+    generateMockState(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(mockSortVegetables).toHaveBeenCalled();
   });
@@ -63,9 +72,5 @@ describe('Calendar', () => {
     expect(mockBuildCellMap).toHaveBeenCalled();
   });
 
-  it('should not render if the data has not loaded', () => {
-    let wrapper = shallow(<Calendar />);
-    mockAppState.marketData = null;
-    expect(wrapper.find('.loading')).toBeTruthy();
-  });
+
 });

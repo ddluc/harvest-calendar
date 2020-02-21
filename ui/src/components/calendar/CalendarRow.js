@@ -5,9 +5,8 @@ import { getMonthsInSeason } from '../../services/selectors';
 
 import '../../styles/CalendarRow.scss'
 
-function CalendarRow({vegetable, cellMap}) {
+function CalendarRow({vegetable, cellMap, months}) {
   const { state, dispatch } = React.useContext(Store);
-  const months = getMonthsInSeason(state);
   let cells = [];
   vegetable.mPos.forEach((mPos) => {
     let cellKey = `${mPos.month}-${mPos.segment}`;

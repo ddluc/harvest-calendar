@@ -27,7 +27,11 @@ function Calendar() {
         <div className="calendar-body">
           {
             vegetables.map((vegetable) => {
-              return <CalendarRow key={vegetable.id} vegetable={vegetable} cellMap={cellMap}/>
+              return <CalendarRow
+                        key={vegetable.id}
+                        vegetable={vegetable}
+                        cellMap={cellMap}
+                        months={monthsInSeason} />
             })
           }
         </div>

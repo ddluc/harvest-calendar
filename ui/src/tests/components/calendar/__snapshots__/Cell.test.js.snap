@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell should render 1`] = `
+<div
+  className="calendar-cell cell-1 none"
+  id="MAR-1"
+>
+  -
+</div>
+`;

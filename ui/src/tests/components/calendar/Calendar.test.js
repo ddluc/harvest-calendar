@@ -16,14 +16,6 @@ import { shallow } from 'enzyme';
 
 describe('Calendar', () => {
 
-  let generateMockState = (mockAppState) => {
-    jest
-      .spyOn(React, 'useContext')
-      .mockImplementation(() => {
-        return {state: mockAppState, dispatch: () => true}
-      });
-  }
-
   let mockFetchMarketData = jest.fn(() => true);
 
   beforeEach(() => {
@@ -36,7 +28,7 @@ describe('Calendar', () => {
   });
 
   it('should render if the market data is loaded', () => {
-    generateMockState(getMockState());
+    buildContextSpy(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(wrapper).toMatchSnapshot();
   });
@@ -44,25 +36,25 @@ describe('Calendar', () => {
   it('should not render if the data has not loaded', () => {
     let mockAppState = getMockState();
     mockAppState.marketData = null;
-    generateMockState(mockAppState);
+    buildContextSpy(mockAppState);
     let wrapper = shallow(<Calendar />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should fetch the marketData', () => {
-    generateMockState(getMockState());
+    buildContextSpy(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(mockFetchMarketData).toHaveBeenCalled();
   });
 
   it('should filter the vegetable results', () => {
-    generateMockState(getMockState());
+    buildContextSpy(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(mockFilterVegetables).toHaveBeenCalled();
   });
 
   it('should sort the vegetable results', () => {
-    generateMockState(getMockState());
+    buildContextSpy(getMockState());
     let wrapper = shallow(<Calendar />);
     expect(mockSortVegetables).toHaveBeenCalled();
   });

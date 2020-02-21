@@ -12,16 +12,8 @@ describe('CalendarHeader', () => {
 
   let mockAppState = getMockState();
 
-  beforeEach(() => {
-    jest
-      .spyOn(React, 'useContext')
-      .mockImplementation(() => {
-        return {state: mockAppState, dispatch: () => true}
-      });
-  });
-
   it('should render', () => {
-
+    buildContextSpy(mockAppState);
     const props = {
       segmentMap: mockBuildSegmentMap(),
       cellMap: mockBuildCellMap(),

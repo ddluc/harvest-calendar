@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PricingToggle should render 1`] = `
+<div
+  className="pricing-toggle"
+>
+  <h4>
+    Pricing Mode
+  </h4>
+  <a
+    className="toggle off"
+    onClick={[Function]}
+  >
+    OFF
+  </a>
+</div>
+`;

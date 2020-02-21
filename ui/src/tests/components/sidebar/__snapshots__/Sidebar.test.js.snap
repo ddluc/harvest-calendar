@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar should render 1`] = `
+<div
+  className="sidebar"
+>
+  <div
+    className="sidebar-title"
+  >
+    <h2>
+      Harvest Calendar
+    </h2>
+    <span>
+      For Willamette Valley Farmers Markets
+    </span>
+  </div>
+  <SearchField
+    placeholder="Search..."
+  />
+  <SeasonPicker />
+  <PricingToggle />
+  <hr />
+  <div
+    className="menu-item"
+  >
+    <a
+      href="#"
+    >
+      How to use this tool
+    </a>
+  </div>
+  <div
+    className="menu-item"
+  >
+    <a
+      href="https://github.com/ddluc/harvest-calendar"
+      target="_blank"
+    >
+      View On Github
+    </a>
+  </div>
+</div>
+`;

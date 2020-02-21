@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchField should render 1`] = `
+<div
+  className="search-field"
+>
+  <input
+    onChange={[Function]}
+    placeholder="hello"
+    type="text"
+    value=""
+  />
+</div>
+`;

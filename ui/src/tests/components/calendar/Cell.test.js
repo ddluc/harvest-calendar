@@ -11,21 +11,13 @@ import { shallow } from 'enzyme';
 
 describe('Cell', () => {
 
-  let generateMockState = (mockAppState) => {
-    jest
-      .spyOn(React, 'useContext')
-      .mockImplementation(() => {
-        return {state: mockAppState, dispatch: () => true}
-      });
-  };
-
   it('should render', () => {
     let mockState = getMockState();
     // Select a random vegetable to test against
     let vegetableIndex = 20;
     let vegetable = mockState.marketData.vegetables[vegetableIndex];
     let mPos = vegetable.mPos[6];
-    generateMockState(mockState);
+    buildContextSpy(mockState);
     const props = {
       mPos,
       cellIndex: 1,

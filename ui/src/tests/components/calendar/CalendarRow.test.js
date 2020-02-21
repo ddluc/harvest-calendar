@@ -11,19 +11,11 @@ import { shallow } from 'enzyme';
 
 describe('CalendarRow', () => {
 
-  let generateMockState = (mockAppState) => {
-    jest
-      .spyOn(React, 'useContext')
-      .mockImplementation(() => {
-        return {state: mockAppState, dispatch: () => true}
-      });
-  }
-
   it('should render', () => {
     let mockState = getMockState();
     // Random index vegetable array
     let vegetableIndex = 10;
-    generateMockState(mockState);
+    buildContextSpy(mockState);
     const props = {
       key: 1,
       months: mockGetMonthsInSeason(),

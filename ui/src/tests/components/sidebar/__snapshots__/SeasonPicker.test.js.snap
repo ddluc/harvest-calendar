@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SeasonPicker should render 1`] = `
+<div
+  className="season-picker"
+>
+  <h4>
+    Season
+  </h4>
+  <Button
+    active={true}
+    label="Spring"
+    onClick={[Function]}
+    type="primary"
+  />
+  <Button
+    active={false}
+    label="Summer"
+    onClick={[Function]}
+    type="primary"
+  />
+  <Button
+    active={false}
+    label="Fall"
+    onClick={[Function]}
+    type="primary"
+  />
+  <Button
+    active={false}
+    label="Winter"
+    onClick={[Function]}
+    type="primary"
+  />
+</div>
+`;

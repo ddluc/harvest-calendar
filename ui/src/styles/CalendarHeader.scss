@@ -74,6 +74,13 @@
 .sub-header-cell {
   background-color: $grey-2;
   text-align: center;
+  padding-top: 5px; 
+  font-size: 14px;
+  @media (max-width: $tablet-view) {
+    padding-top: 5px; 
+    font-size: 12px;
+  }
+  
 }
 
 

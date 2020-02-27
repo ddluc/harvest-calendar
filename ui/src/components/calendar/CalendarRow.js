@@ -20,7 +20,10 @@ function CalendarRow({vegetable, cellMap, months}) {
   });
   return (
     <div className="calendar-row">
-      <div className={`calendar-cell cell-label`}>{vegetable.label}</div>
+      <div className={`calendar-cell cell-label`}>
+        <p>{vegetable.label}</p>
+        <small> {vegetable.category.label} | <em>{vegetable.scientific_name}</em></small>
+      </div>
       { cells }
     </div>
   );

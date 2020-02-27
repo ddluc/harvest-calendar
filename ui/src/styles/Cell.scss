@@ -27,6 +27,24 @@
   }
 }
 
+.calendar-cell.cell-label {
+  padding-top: 5px;
+  p {
+    font-size: 14px;
+    margin: 0px; 
+  }
+  small {
+    font-size: 12px;
+    color: $grey-4; 
+  }
+  @media (max-width: $tablet-view) {
+    padding-top: 10px;
+    small {
+      display: none;
+    }
+  }
+}
+
 .calendar-cell.active {
   font-weight: bold;
   color: $charcol;
@@ -44,7 +62,6 @@
   span { display: block; font-size: 11px}
 
 }
-
 
 .calendar-cell.early {
   background-color: $early;

@@ -7,7 +7,17 @@ exports[`CalendarRow should render 1`] = `
   <div
     className="calendar-cell cell-label"
   >
-    Celery
+    <p>
+      Celery
+    </p>
+    <small>
+       
+      Other
+       | 
+      <em>
+        Apium graveolens
+      </em>
+    </small>
   </div>
   <Cell
     cellIndex={1}
@@ -16,7 +26,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-MAR-1"
     mPos={
       Object {
-        "id": 3229,
+        "id": 357,
         "month": "MAR",
         "segment": 1,
         "status": "none",
@@ -33,7 +43,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-MAR-2"
     mPos={
       Object {
-        "id": 3230,
+        "id": 358,
         "month": "MAR",
         "segment": 2,
         "status": "none",
@@ -50,7 +60,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-MAR-3"
     mPos={
       Object {
-        "id": 3231,
+        "id": 359,
         "month": "MAR",
         "segment": 3,
         "status": "none",
@@ -67,7 +77,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-APR-1"
     mPos={
       Object {
-        "id": 3232,
+        "id": 360,
         "month": "APR",
         "segment": 1,
         "status": "early",
@@ -84,7 +94,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-APR-2"
     mPos={
       Object {
-        "id": 3233,
+        "id": 361,
         "month": "APR",
         "segment": 2,
         "status": "early",
@@ -101,7 +111,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-APR-3"
     mPos={
       Object {
-        "id": 3234,
+        "id": 362,
         "month": "APR",
         "segment": 3,
         "status": "early",
@@ -118,7 +128,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-MAY-1"
     mPos={
       Object {
-        "id": 3235,
+        "id": 363,
         "month": "MAY",
         "segment": 1,
         "status": "early",
@@ -135,7 +145,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-MAY-2"
     mPos={
       Object {
-        "id": 3236,
+        "id": 364,
         "month": "MAY",
         "segment": 2,
         "status": "peak",
@@ -152,7 +162,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-MAY-3"
     mPos={
       Object {
-        "id": 3237,
+        "id": 365,
         "month": "MAY",
         "segment": 3,
         "status": "peak",
@@ -169,7 +179,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-JUN-1"
     mPos={
       Object {
-        "id": 3238,
+        "id": 366,
         "month": "JUN",
         "segment": 1,
         "status": "peak",
@@ -186,7 +196,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-JUN-2"
     mPos={
       Object {
-        "id": 3239,
+        "id": 367,
         "month": "JUN",
         "segment": 2,
         "status": "peak",
@@ -203,7 +213,7 @@ exports[`CalendarRow should render 1`] = `
     key="celery-JUN-3"
     mPos={
       Object {
-        "id": 3240,
+        "id": 368,
         "month": "JUN",
         "segment": 3,
         "status": "peak",

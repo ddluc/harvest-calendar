@@ -21,7 +21,7 @@ describe('reducer', () => {
     let state =  { ... initialState};
     let action = { type: 'SET_ACTIVE_SEASON', payload };
     let newState = reducer(state, action);
-    // expect(newState.activeSeason).toEqual(payload);
+    expect(newState.activeSeason).toEqual(payload);
     expect(newState.activeMonth).toEqual(null);
     expect(newState.activeSegment).toEqual(null);
     // Ensures immutabilty

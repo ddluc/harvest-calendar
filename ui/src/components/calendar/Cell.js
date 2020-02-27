@@ -1,12 +1,10 @@
 import React from 'react';
 import PeakIcon  from '../icons/peak';
-import LateIcon  from '../icons/late';
-import EarlyIcon from '../icons/early';
 import { Store } from '../../flux/store';
 import '../../styles/Cell.scss'
 
 
-function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
+function Cell({ mPos, cellIndex, id, isActive, category}) {
 
   const { state, dispatch } = React.useContext(Store);
 
@@ -19,17 +17,11 @@ function Cell ({mPos, cellIndex, id, isActive, showPrice}) {
     } else {
       cellContent = '-';
     }
-  } else if (mPos.status === 'none' || mPos.status === 'off') {
-    cellContent = '-';
-  } else if (mPos.status === 'early') {
-    cellContent = (<div><EarlyIcon /><span className="status">{statusDisplay}</span></div>);
   } else if (mPos.status === 'peak') {
-    cellContent = (<div><PeakIcon /><span className="status">{statusDisplay}</span></div>);
-  } else if (mPos.status === 'late') {
-    cellContent = (<div><EarlyIcon /><span className="status">{statusDisplay}</span></div>);
+    cellContent = (<div><PeakIcon type={category} /></div>);
   }
 
-  let classNames = `${mPos.status}`;
+  let classNames = `${mPos.status} ${category.replace('_', '-')}`;
   if (isActive) {
     classNames = `${classNames} active`;
   }

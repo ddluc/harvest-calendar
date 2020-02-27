@@ -14,8 +14,8 @@ function CalendarRow({vegetable, cellMap, months}) {
       let id = `${vegetable.key}-${cellKey}`;
       let cellIndex = cellMap.body[cellKey];
       let isActive = (cellKey === `${state.activeMonth}-${state.activeSegment}`) ? 'active' : '';
-      let showPrice = state.pricingMode === true ? 'showPrice' : '';
-      cells.push(<Cell key={id} mPos={mPos} id={id} cellIndex={cellIndex} isActive={isActive} showPrice={showPrice}/>);
+      let category = vegetable.category.key; 
+      cells.push(<Cell key={id} mPos={mPos} id={id} cellIndex={cellIndex} isActive={isActive} category={category}/>);
     }
   });
   return (

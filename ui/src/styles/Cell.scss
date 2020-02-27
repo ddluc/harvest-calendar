@@ -8,22 +8,8 @@
   }
   .icon {
     text-align: center;
-    width: 80%;
+    width: 33%;
     margin: 0px auto;
-  }
-
-  .status {
-    display: none;
-  }
-}
-
-.calendar-cell:hover {
-  cursor: pointer;
-  .icon {
-    display: none;
-  }
-  .status {
-    display: block;
   }
 }
 
@@ -63,21 +49,25 @@
 
 }
 
-.calendar-cell.early {
-  background-color: $early;
-  color: darken($early, 50);
-}
 
-.calendar-cell.peak {
-  background-color: $peak;
-  color: darken($peak, 30);
-}
-
-.calendar-cell.late {
-  background-color: $early;
-  color: darken($early, 50);
-}
-
-.calendar-cell.none, .calendar-cell.off {
-  background-color: $grey-2;
+.calendar-cell {
+  &.winter-vegetable { background-color: $winter-vegetable; }
+  // &.winter-vegetable.peak { background-color: $winter-vegetable-peak; }
+  &.summer-vegetable { background-color: $summer-vegetable; }
+  // &.summer-vegetable.peak { background-color: $summer-vegetable-peak; }
+  &.greens { background-color: $greens; } 
+  // &.greens.peak { background-color: $greens-peak;}
+  &.aromatic { background-color: $aromatics; }
+  // &.aromatic.peak { background-color: $aromatics-peak; }
+  &.fungi { background-color: $fungi; }
+  // &.fungi.peak { background-color: $fungi-peak; }
+  &.root { background-color: $root; }
+  // &.root.peak { background-color: $root-peak; }
+  &.legume { background-color: $legume; }
+  // &.legume.peak { background-color: $legume-peak; }
+  &.other { background-color: $other; }
+  // &.other.peak { background-color: $other-peak; }
+  &.squash { background-color: $squash;}
+  // &.squash.peak { background-color: $squash-peak;}
+  &.none { background-color: $grey-1; }
 }

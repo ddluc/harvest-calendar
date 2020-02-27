@@ -3,7 +3,7 @@
 .calendar-row {
   display: grid;
   grid-gap: 1px;
-  background-color: $grey-4;
+  background-color: $grey-3;
   grid-template-columns: 26% repeat(12, 1fr);
   grid-template-rows: 50px;
   @media(max-width: $tablet-view) {

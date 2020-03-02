@@ -53,23 +53,20 @@ export const getMonthsInSeason = (state) => {
 export const sortVegetables = (state) => {
   let {marketData, activeMonth, activeSegment} = state;
   let peak = [];
-  let early = [];
-  let late = [];
   let off = [];
   let none = [];
+  let vegetables = marketData.vegetables.sort((a, b) => (a.category.label < b.category.label) ? -1 : 1); 
   if (activeSegment) {
-    marketData.vegetables.forEach((vegetable) => {
+    vegetables.forEach((vegetable) => {
       vegetable.mPos.forEach((mPos) => {
         if (`${mPos.month}-${mPos.segment}` === `${activeMonth}-${activeSegment}` ) {
           if ( mPos.status === 'peak') peak.push(vegetable);
-          if ( mPos.status === 'early') early.push(vegetable);
-          if ( mPos.status === 'late') late.push(vegetable);
-          if ( mPos.status === 'off') off.push(vegetable);
+          if ( mPos.status === 'early' || mPos.status === 'late' || mPos.status === 'off') off.push(vegetable);
           if ( mPos.status === 'none') none.push(vegetable);
         }
       });
     });
-    let sortedVegetables = [...peak, ...early, ...late, ...off, ...none ];
+    let sortedVegetables = [...peak, ...off, ...none ];
     return sortedVegetables;
   } else {
     return marketData.vegetables;
@@ -92,8 +89,11 @@ export const filterVegetables = (state, list) => {
     let filteredVegetables = [];
     vegetables.forEach((veg) => {
       let formattedLabel = veg.label.toLowerCase();
+      let formattedCategory = veg.category.label.toLowerCase(); 
       let formattedInput = searchInput.trim().toLowerCase();
-      if (formattedLabel.includes(formattedInput)) {
+      if (formattedLabel.includes(formattedInput)|| formattedCategory.includes(formattedInput) ) {
+        filteredVegetables.push(veg);
+      } else if (formattedInput.includes(formattedLabel) || formattedInput.includes(formattedCategory) ) {
         filteredVegetables.push(veg);
       }
     });

@@ -51,23 +51,55 @@
 
 
 .calendar-cell {
-  &.winter-vegetable { background-color: $winter-vegetable; }
-  // &.winter-vegetable.peak { background-color: $winter-vegetable-peak; }
-  &.summer-vegetable { background-color: $summer-vegetable; }
-  // &.summer-vegetable.peak { background-color: $summer-vegetable-peak; }
-  &.greens { background-color: $greens; } 
-  // &.greens.peak { background-color: $greens-peak;}
-  &.aromatic { background-color: $aromatics; }
-  // &.aromatic.peak { background-color: $aromatics-peak; }
-  &.fungi { background-color: $fungi; }
-  // &.fungi.peak { background-color: $fungi-peak; }
-  &.root { background-color: $root; }
-  // &.root.peak { background-color: $root-peak; }
-  &.legume { background-color: $legume; }
-  // &.legume.peak { background-color: $legume-peak; }
-  &.other { background-color: $other; }
-  // &.other.peak { background-color: $other-peak; }
-  &.squash { background-color: $squash;}
-  // &.squash.peak { background-color: $squash-peak;}
-  &.none { background-color: $grey-1; }
+  &.winter-vegetable { 
+    background-color: $winter-vegetable; 
+    color: darken($color: $winter-vegetable, $amount: 50); 
+    border: solid 1px darken($color: $winter-vegetable, $amount: 20); 
+  }
+  &.summer-vegetable { 
+    background-color: $summer-vegetable; 
+    color: darken($color: $summer-vegetable, $amount: 50); 
+    border: solid 1px darken($color: $summer-vegetable, $amount: 20); 
+  }
+  &.greens { 
+    background-color: $greens; 
+    color: darken($color: $greens, $amount: 50); 
+    border: solid 1px darken($color: $greens, $amount: 20); 
+  } 
+  &.aromatic { 
+    background-color: $aromatic; 
+    color: darken($color: $aromatic, $amount: 50); 
+    border: solid 1px darken($color: $aromatic, $amount: 20); 
+  }
+  &.fungi { 
+    background-color: $fungi; 
+    color: darken($color: $fungi, $amount: 50); 
+    border: solid 1px darken($color: $fungi, $amount: 20); 
+  }
+  &.root { 
+    background-color: $root; 
+    color: darken($color: $root, $amount: 50); 
+    border: solid 1px darken($color: $root, $amount: 20); 
+  }
+  &.legume { 
+    background-color: $legume; 
+    color: darken($color: $legume, $amount: 50); 
+    border: solid 1px darken($color: $legume, $amount: 20); 
+  }
+  &.other { 
+    background-color: $other; 
+    color: darken($color: $other, $amount: 50); 
+    border: solid 1px darken($color: $other, $amount: 20); 
+  }
+  
+  &.squash { 
+    background-color: $squash;
+    color: darken($color: $squash, $amount: 50); 
+    border: solid 1px darken($color: $squash, $amount: 20); 
+  }
+  
+  &.none { 
+    background-color: $grey-1; 
+    border: solid 1px darken($color: $grey-1, $amount: 20); 
+  }
 }

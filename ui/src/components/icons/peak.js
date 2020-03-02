@@ -36,8 +36,6 @@ function PeakIcon({type}) {
             break;
     }
 
-    console.log(type, color);
-
     return (
         <div className="icon">
             <svg viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">

@@ -31,12 +31,6 @@
   }
 }
 
-.calendar-cell.active {
-  font-weight: bold;
-  color: $charcol;
-  border-left: outset 2px $charcol;
-  border-right: outset 2px $charcol;
-}
 
 .calendar-cell.price {
   padding-top: 8px;
@@ -48,7 +42,6 @@
   span { display: block; font-size: 11px}
 
 }
-
 
 .calendar-cell {
   &.winter-vegetable { 
@@ -102,4 +95,8 @@
     background-color: $grey-1; 
     border: solid 1px darken($color: $grey-1, $amount: 20); 
   }
+  &.active {
+    
+  }
+
 }

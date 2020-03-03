@@ -24,7 +24,7 @@ function CalendarHeader({segmentMap, cellMap, months}) {
         let isActive = ( cellKey === `${state.activeMonth}-${state.activeSegment}`) ? 'active' : '';
         let cell = (
           <div key={cellKey} className={`sub-header-cell cell-${cellIndex} ${isActive}`} onClick={() => setActiveSegment(dispatch, month, segment)}>
-            {segment.label}
+            {segment.label} {isActive ? <span class="arrow">▼</span> : ''}
           </div>
         );
         subHeader.push(cell);

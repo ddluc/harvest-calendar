@@ -21,7 +21,7 @@ function Cell({ mPos, cellIndex, id, isActive, category}) {
     cellContent = (<div><PeakIcon type={category} /></div>);
   }
 
-  let classNames = `${category.replace('_', '-')}`;
+  let classNames = `${mPos.status} ${category.replace('_', '-')}`;
   if (isActive) {
     classNames = `${classNames} active`;
   }

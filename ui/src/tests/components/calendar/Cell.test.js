@@ -23,7 +23,8 @@ describe('Cell', () => {
       cellIndex: 1,
       id: 'MAR-1',
       isActive: false,
-      showPrice: false
+      showPrice: false, 
+      category: 'other'
     };
     let wrapper = shallow(<Cell { ...props} /> );
     expect(wrapper).toMatchSnapshot();

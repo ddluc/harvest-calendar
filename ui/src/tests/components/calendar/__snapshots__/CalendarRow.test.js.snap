@@ -20,6 +20,7 @@ exports[`CalendarRow should render 1`] = `
     </small>
   </div>
   <Cell
+    category="other"
     cellIndex={1}
     id="celery-MAR-1"
     isActive=""
@@ -34,9 +35,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "0.00",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={2}
     id="celery-MAR-2"
     isActive=""
@@ -51,9 +52,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "0.00",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={3}
     id="celery-MAR-3"
     isActive=""
@@ -68,9 +69,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "0.00",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={4}
     id="celery-APR-1"
     isActive=""
@@ -85,9 +86,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={5}
     id="celery-APR-2"
     isActive=""
@@ -102,9 +103,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={6}
     id="celery-APR-3"
     isActive=""
@@ -119,9 +120,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={7}
     id="celery-MAY-1"
     isActive=""
@@ -136,9 +137,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={8}
     id="celery-MAY-2"
     isActive="active"
@@ -153,9 +154,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={9}
     id="celery-MAY-3"
     isActive=""
@@ -170,9 +171,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={10}
     id="celery-JUN-1"
     isActive=""
@@ -187,9 +188,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={11}
     id="celery-JUN-2"
     isActive=""
@@ -204,9 +205,9 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
   <Cell
+    category="other"
     cellIndex={12}
     id="celery-JUN-3"
     isActive=""
@@ -221,7 +222,6 @@ exports[`CalendarRow should render 1`] = `
         "value": "1.99",
       }
     }
-    showPrice=""
   />
 </div>
 `;

@@ -21,7 +21,7 @@ function Cell({ mPos, cellIndex, id, isActive, category}) {
     cellContent = (<div><PeakIcon type={category} /></div>);
   }
 
-  let classNames = `${mPos.status} ${category.replace('_', '-')}`;
+  let classNames = `${category.replace('_', '-')}`;
   if (isActive) {
     classNames = `${classNames} active`;
   }
@@ -30,7 +30,14 @@ function Cell({ mPos, cellIndex, id, isActive, category}) {
   }
 
 
-  return (<div id={id} className={`calendar-cell cell-${cellIndex} ${classNames}`} >{cellContent}</div>);
+  return (
+    <div id={id} 
+         className={`calendar-cell ${classNames}`} 
+         data-cell-index={cellIndex} 
+         data-cell-status={mPos.status}
+      >
+        {cellContent}
+    </div>);
 
 };
 

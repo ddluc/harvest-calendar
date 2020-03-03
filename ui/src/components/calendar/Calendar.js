@@ -26,8 +26,10 @@ function Calendar() {
           segmentMap={segmentMap} />
         <div className="calendar-body">
           {
-            vegetables.map((vegetable) => {
+
+            vegetables.map((vegetable, index) => {
               return <CalendarRow
+                        rowIndex={index}
                         key={vegetable.id}
                         vegetable={vegetable}
                         cellMap={cellMap}

@@ -28,9 +28,10 @@ describe('Calendar', () => {
   });
 
   it('should render if the market data is loaded', () => {
-    buildContextSpy(getMockState());
+    let mockState = getMockState(); 
+    buildContextSpy(mockState);
     let wrapper = shallow(<Calendar />);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.calendar')).toHaveLength(1); 
   });
 
   it('should not render if the data has not loaded', () => {
@@ -38,7 +39,7 @@ describe('Calendar', () => {
     mockAppState.marketData = null;
     buildContextSpy(mockAppState);
     let wrapper = shallow(<Calendar />);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.calendar')).toHaveLength(0); 
   });
 
   it('should fetch the marketData', () => {

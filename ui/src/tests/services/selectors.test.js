@@ -66,32 +66,21 @@ describe('sortVegetables', () => {
 
     // The following tests are subject to fail if the data inventory is
     // updated with new data
-
-    it('should sort the vegetables by availabilty in early June', () => {
+    it('should sort the vegetables by availabilty and category', () => {
       mockAppState.activeMonth = 'JUN';
       mockAppState.activeSegment = 1;
-      let sortedVegetables = sortVegetables(mockAppState);
-      expect(sortedVegetables[0].key).toEqual('asparagus');
-      expect(sortedVegetables[13].key).toEqual('broccoli');
-      expect(sortedVegetables[23].key).toEqual('arugula_raab');
-    });
+      let order = [
+        'cabbage','beet','radish','carrot','celery','asparagus','pea','fava_bean',
+        'parsley','spinach','lettuce','morel','onion','arugula','broccoli', 'summer_squash',
+        'pea_shoot', 'sorrel', 'kale','swiss_chard', 'king_bolete', 'garlic', 'leek', 'arugula_raab',
+        'cauliflower', 'brussels_sprout', 'sweet_potato', 'corn', 'cucumber', 'eggplant', 'tomato',
+        'bell_pepper', 'winter_squash', 'parsnip', 'turnip', 'potato', 'melon',
+        'green_bean', 'nettles', 'kale_raab', 'chanterelle']; 
+      let sortedVegetables = sortVegetables(mockAppState); 
+      sortedVegetables.forEach((veg, index) => {
+        expect(veg.key).toEqual(order[index]); 
+      });
 
-    it('should sort the vegetables by availabilty in late October', () => {
-      mockAppState.activeMonth = 'OCT';
-      mockAppState.activeSegment = 3;
-      let sortedVegetables = sortVegetables(mockAppState);
-      expect(sortedVegetables[0].key).toEqual('beet');
-      expect(sortedVegetables[17].key).toEqual('arugula');
-      expect(sortedVegetables[30].key).toEqual('garlic');
-    });
-
-    it('should sort the vegetables by availabilty in mid March', () => {
-      mockAppState.activeMonth = 'MAR';
-      mockAppState.activeSegment = 2;
-      let sortedVegetables = sortVegetables(mockAppState);
-      expect(sortedVegetables[0].key).toEqual('cabbage');
-      expect(sortedVegetables[3].key).toEqual('nettles');
-      expect(sortedVegetables[16].key).toEqual('garlic');
     });
 
 });
@@ -119,6 +108,13 @@ describe('filterVegetables', () => {
     expect(filteredVegetables[1].key).toEqual('swiss_chard');
   });
 
+  it('should filter the vegetables by category', () => {
+    mockAppState.searchInput = 'summer'; 
+    let filteredVegetables = filterVegetables(mockAppState); 
+    expect(filteredVegetables[0].key).toEqual('bell_pepper'); 
+    expect(filteredVegetables[1].key).toEqual('corn'); 
+  }); 
+
   it('should ignore case when filtering vegetables', () => {
     mockAppState.searchInput = 'tOmAtO';
     let filteredVegetables = filterVegetables(mockAppState);
@@ -132,12 +128,16 @@ describe('filterVegetables', () => {
     expect(filteredVegetables).toHaveLength(mockAppState.marketData.vegetables.length);
   });
 
+
+
   it('should use the overrided list, if provided', () => {
     let vegetables = [];
     mockAppState.searchInput = 'tomato';
     let filteredVegetables = filterVegetables(mockAppState, vegetables);
     expect(filteredVegetables).toHaveLength(0);
   });
+
+  
 
 });
 

@@ -5,7 +5,7 @@ import { getMonthsInSeason } from '../../services/selectors';
 
 import '../../styles/CalendarRow.scss'
 
-function CalendarRow({vegetable, cellMap, months}) {
+function CalendarRow({vegetable, cellMap, rowIndex}) {
   const { state, dispatch } = React.useContext(Store);
   let cells = [];
   vegetable.mPos.forEach((mPos) => {
@@ -19,7 +19,7 @@ function CalendarRow({vegetable, cellMap, months}) {
     }
   });
   return (
-    <div className="calendar-row">
+    <div className="calendar-row" data-row-index={rowIndex}>
       <div className={`calendar-cell cell-label`}>
         <p>{vegetable.label}</p>
         <small> {vegetable.category.label} | <em>{vegetable.scientific_name}</em></small>

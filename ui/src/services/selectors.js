@@ -55,7 +55,7 @@ export const sortVegetables = (state) => {
   let peak = [];
   let off = [];
   let none = [];
-  let vegetables = marketData.vegetables.sort((a, b) => (a.category.label < b.category.label) ? -1 : 1); 
+  let vegetables = marketData.vegetables.sort((a, b) => (a.category.label > b.category.label) ? -1 : 1); 
   if (activeSegment) {
     vegetables.forEach((vegetable) => {
       vegetable.mPos.forEach((mPos) => {

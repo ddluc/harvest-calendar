@@ -2,9 +2,9 @@
 
 exports[`Cell should render 1`] = `
 <div
-  className="calendar-cell cell-1 none"
+  className="calendar-cell other"
+  data-cell-index={1}
+  data-cell-status="none"
   id="MAR-1"
->
-  -
-</div>
+/>
 `;

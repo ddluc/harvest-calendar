@@ -94,9 +94,11 @@
   &.none { 
     background-color: $grey-1; 
     border: solid 1px darken($color: $grey-1, $amount: 20); 
+    color: $grey-2; 
+    span {
+      font-size: 12px; 
+    }
   }
-  &.active {
-    
-  }
+ 
 
 }

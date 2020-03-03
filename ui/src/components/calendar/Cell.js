@@ -16,10 +16,12 @@ function Cell({ mPos, cellIndex, isActive, vegetable}) {
       if (mPos.value > 0) {
         cellContent = (<div>{mPos.value}<span class="unit">{mPos.unit}</span></div>);
       } else {
-        cellContent = '-';
+        cellContent = <span>N/A</span>
       }
     } else if (mPos.status === 'peak') {
       cellContent = (<div><PeakIcon type={vegetable.category.key} /></div>);
+    } else if (mPos.status === 'none') {
+      cellContent = <span>N/A</span>
     }
     // Build class string
     let classNames = `${mPos.status} ${vegetable.category.key.replace('_', '-')}`;

@@ -25,6 +25,16 @@
   color: $charcol;
   font-size: 16px;
   background-color: $white;
+  span  { font-weight: bold; }
+  .winter-vegetable { color: darken($color: $winter-vegetable, $amount: 20); }
+  .summer-vegetable {  color: darken($color: $summer-vegetable, $amount: 20);  }
+  .greens { color: darken($color: $greens, $amount: 20);  } 
+  .aromatic {  color: darken($color: $aromatic, $amount: 20);  }
+  .fungi {  color: darken($color: $fungi, $amount: 20); }
+  .root { color: darken($color: $root, $amount: 20);  }
+  .legume { color: darken($color: $legume, $amount: 50);  }
+  .other { color: darken($color: $other, $amount: 20); }
+  .squash {  color: darken($color: $squash, $amount: 20); }
 }
 
 .calendar-cell.cell-1 {

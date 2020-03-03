@@ -22,11 +22,12 @@ function CalendarRow({vegetable, cellMap, rowIndex}) {
       cells.push(<Cell key={cellKey} cellIndex={cellIndex} isActive={isActive} vegetable={vegetable} />); 
     }
   }
+  let categoryClass = vegetable.category.key.replace('_', '-')
   return (
     <div className="calendar-row" data-row-index={rowIndex}>
       <div className={`calendar-cell cell-label`}>
         <p>{vegetable.label}</p>
-        <small> {vegetable.category.label} | <em>{vegetable.scientific_name}</em></small>
+        <small> <span className={categoryClass}>{vegetable.category.label}</span> | <em>{vegetable.scientific_name}</em></small>
       </div>
       { cells }
     </div>

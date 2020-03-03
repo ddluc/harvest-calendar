@@ -11,7 +11,7 @@ function PricingToggle() {
    let status = '';
    let label = '';
    let updateValue = '';
-
+   let warning = ' '; 
    if (state.pricingMode === false ) {
      status = 'off';
      label = 'OFF';
@@ -20,12 +20,14 @@ function PricingToggle() {
      status = 'on';
      label = ' ON ';
      updateValue = false;
+     warning = '* Data is still being researched';
    }
 
   return (
     <div className="pricing-toggle">
       <h4>Pricing Mode</h4>
       <a className={`toggle ${status}`} onClick={() => setPricingMode(dispatch, updateValue)}>{label}</a>
+      <p>{ warning }</p>
     </div>
   );
 }

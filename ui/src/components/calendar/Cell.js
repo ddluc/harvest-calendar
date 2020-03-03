@@ -14,7 +14,7 @@ function Cell({ mPos, cellIndex, isActive, vegetable}) {
     // Determine cell contents
     if (state.pricingMode === true) {
       if (mPos.value > 0) {
-        cellContent = (<div>{mPos.value}<span class="unit">{mPos.unit}</span></div>);
+        cellContent = (<div>{mPos.value}*<span class="unit">{mPos.unit}</span></div>);
       } else {
         cellContent = <span>N/A</span>
       }

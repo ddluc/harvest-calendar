@@ -7,5 +7,9 @@ exports[`Cell should render 1`] = `
   data-cell-status="none"
   data-market-pos="MAR-1"
   data-vegetable="king_bolete"
-/>
+>
+  <span>
+    N/A
+  </span>
+</div>
 `;

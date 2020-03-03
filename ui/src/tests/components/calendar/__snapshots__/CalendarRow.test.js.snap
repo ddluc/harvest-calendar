@@ -12,7 +12,11 @@ exports[`CalendarRow should render 1`] = `
     </p>
     <small>
        
-      Other
+      <span
+        className="other"
+      >
+        Other
+      </span>
        | 
       <em>
         Apium graveolens

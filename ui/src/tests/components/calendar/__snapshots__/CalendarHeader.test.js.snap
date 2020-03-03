@@ -46,6 +46,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Early
+     
   </div>
   <div
     className="sub-header-cell cell-2 "
@@ -53,6 +54,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Mid
+     
   </div>
   <div
     className="sub-header-cell cell-3 "
@@ -60,6 +62,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Late
+     
   </div>
   <div
     className="sub-header-cell cell-1 "
@@ -67,6 +70,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Early
+     
   </div>
   <div
     className="sub-header-cell cell-2 "
@@ -74,6 +78,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Mid
+     
   </div>
   <div
     className="sub-header-cell cell-3 "
@@ -81,6 +86,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Late
+     
   </div>
   <div
     className="sub-header-cell cell-1 "
@@ -88,6 +94,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Early
+     
   </div>
   <div
     className="sub-header-cell cell-2 active"
@@ -95,6 +102,12 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Mid
+     
+    <span
+      class="arrow"
+    >
+      ▼
+    </span>
   </div>
   <div
     className="sub-header-cell cell-3 "
@@ -102,6 +115,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Late
+     
   </div>
   <div
     className="sub-header-cell cell-1 "
@@ -109,6 +123,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Early
+     
   </div>
   <div
     className="sub-header-cell cell-2 "
@@ -116,6 +131,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Mid
+     
   </div>
   <div
     className="sub-header-cell cell-3 "
@@ -123,6 +139,7 @@ exports[`CalendarHeader should render 1`] = `
     onClick={[Function]}
   >
     Late
+     
   </div>
 </div>
 `;

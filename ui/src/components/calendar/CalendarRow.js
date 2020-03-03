@@ -8,16 +8,20 @@ import '../../styles/CalendarRow.scss'
 function CalendarRow({vegetable, cellMap, rowIndex}) {
   const { state, dispatch } = React.useContext(Store);
   let cells = [];
-  vegetable.mPos.forEach((mPos) => {
-    let cellKey = `${mPos.month}-${mPos.segment}`;
-    if (Object.keys(cellMap.body).includes(cellKey)) {
-      let id = `${vegetable.key}-${cellKey}`;
-      let cellIndex = cellMap.body[cellKey];
-      let isActive = (cellKey === `${state.activeMonth}-${state.activeSegment}`) ? 'active' : '';
-      let category = vegetable.category.key; 
-      cells.push(<Cell key={id} mPos={mPos} id={id} cellIndex={cellIndex} isActive={isActive} category={category}/>);
+  for (const cellKey in cellMap.body) {
+    const cellIndex = cellMap.body[cellKey];
+    // Find the cooresponding market data to the cell id in the cell map
+    const mPos = vegetable.mPos.find((m) => {
+      let id = `${m.month}-${m.segment}`
+      return (id === cellKey); 
+    }); 
+    const isActive = (cellKey === `${state.activeMonth}-${state.activeSegment}`) ? 'active' : '';
+    if (mPos) {
+      cells.push(<Cell key={cellKey} mPos={mPos} cellIndex={cellIndex} isActive={isActive} vegetable={vegetable} />);
+    } else {
+      cells.push(<Cell key={cellKey} cellIndex={cellIndex} isActive={isActive} vegetable={vegetable} />); 
     }
-  });
+  }
   return (
     <div className="calendar-row" data-row-index={rowIndex}>
       <div className={`calendar-cell cell-label`}>

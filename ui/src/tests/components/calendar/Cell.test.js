@@ -20,11 +20,11 @@ describe('Cell', () => {
     buildContextSpy(mockState);
     const props = {
       mPos,
+      vegetable, 
       cellIndex: 1,
       id: 'MAR-1',
       isActive: false,
       showPrice: false, 
-      category: 'other'
     };
     let wrapper = shallow(<Cell { ...props} /> );
     expect(wrapper).toMatchSnapshot();
